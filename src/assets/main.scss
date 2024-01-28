@@ -20,6 +20,12 @@ header {
             img {
                 height: 105px;
             }
+
+            @media (max-width: 576px) {
+                img {
+                    height: 60px;
+                }
+            }
         }
 
         .navbar-collapse {
@@ -123,6 +129,10 @@ footer{
             }
     
         }
+
+        @media (max-width: 992px) {
+            margin-top: 30px;
+        }
     }
 
     .copyright{
@@ -133,6 +143,10 @@ footer{
         bottom: 10px;
         text-align: right;
         font-size: 10pt;
+
+        @media (max-width: 992px) {
+            margin-top: 10px;
+        }
     }
 }
 
@@ -196,8 +210,6 @@ main {
         }
 
         #company_info {
-            max-width: 1920px;
-            margin: 0 auto;
 
             #company_pic {
                 background-image: url('../assets/img/index_intro_blue_bg.png');
@@ -210,15 +222,46 @@ main {
                 text-align: right;
 
                 img {
-                    height: 78%;
+                    height: 430px;
                     margin: 80px 30px 0 0;
                 }
+
+                @media (max-width: 1280px) {
+                    height: 500px;
+                    img{
+                        height: 380px;
+                    }
+                }
+
+                @media (max-width: 1200px) {
+                    height: 450px;
+                    img{
+                        height: 300px;
+                    }
+                }
+
+                @media (max-width: 992px) {
+                    height: 400px;
+                    img{
+                        height: 250px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    background-image: none;
+                    height: auto;
+                    img{
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+
             }
 
-            #company_info {
+            #company_intro {
+                margin: 100px 0;
                 max-width: 600px;
-                width: 100%;
-                margin: 100px 0 0 30px;
+                
 
                 h2 {
                     font-size: 36pt;
@@ -232,6 +275,15 @@ main {
                     font-size: 14pt;
                     font-weight: 300;
                 }
+
+                @media (max-width: 1200px) {
+                    margin: 30px auto;
+                }
+
+                @media (max-width: 768px) {
+                    padding: 0 50px;
+                    margin: 30px auto;
+                }
             }
 
             #blue_triangle {
@@ -243,6 +295,22 @@ main {
                 background-repeat: no-repeat;
                 background-size: auto;
                 background-position: right bottom;
+
+                @media (max-width: 1280px) {
+                    height: 500px;
+                }
+
+                @media (max-width: 1200px) {
+                    height: 450px;
+                }
+
+                @media (max-width: 992px) {
+                    height: 400px;
+                }
+
+                @media (max-width: 768px) {
+                    display: none;
+                }
             }
         }
 
