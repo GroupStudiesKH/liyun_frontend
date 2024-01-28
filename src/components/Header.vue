@@ -29,11 +29,28 @@
           <li class="nav-item">
             <a class="nav-link" href="#">聯絡詢價</a>
           </li>
-          <li class="nav-item language_switch">
-            <div>
-                <span class="material-icons">&#xE894;</span>
-                <span>Language</span>
+          <li class="nav-item language_switch dropdown">
+            <div
+              class="dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <span class="material-icons">&#xE894;</span>
+              <span>Language</span>
             </div>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="#">
+                  <span class="material-icons">&#xE894;</span>
+                  <span>Language</span>
+                </a>
+              </li>
+              <li><a class="dropdown-item" href="#">繁體中文</a></li>
+              <li><a class="dropdown-item" href="#">ENGLISH</a></li>
+              <li><a class="dropdown-item" href="#">日本語</a></li>
+            </ul>
           </li>
         </ul>
       </div>

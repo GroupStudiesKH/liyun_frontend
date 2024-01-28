@@ -61,6 +61,42 @@ header {
                 font-size: 18pt;
                 vertical-align: middle;
             }
+
+            div::after{
+                display: none;
+            }
+
+            .dropdown-menu{
+                margin-top: -35px;
+                margin-left: -2px;
+                min-width: 118px !important;
+                border-top: none;
+                color: #696969;
+                li{
+                    border-top: 1px solid #696969;
+                    text-align: center;
+                    color: #696969;
+                    padding: 10px 0;
+                    margin: 0 10px;
+
+                    a{
+                        padding: 0;
+                    }
+
+                    a:active{
+                        background-color: #fff;
+                        color: #696969;
+                    }
+                }
+
+                li:first-child{
+                    border-top: none;
+                    .material-icons{
+                        font-size: 13pt;
+                        vertical-align: middle;
+                    }
+                }
+            }
         }
     }
 }
