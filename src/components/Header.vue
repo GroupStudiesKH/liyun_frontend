@@ -29,8 +29,11 @@
           <li class="nav-item">
             <a class="nav-link" href="#">聯絡詢價</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Language</a>
+          <li class="nav-item language_switch">
+            <div>
+                <span class="material-icons">&#xE894;</span>
+                <span>Language</span>
+            </div>
           </li>
         </ul>
       </div>

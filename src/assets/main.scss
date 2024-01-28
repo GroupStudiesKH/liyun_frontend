@@ -42,9 +42,24 @@ header {
                     }
                 }
 
-                .nav-item:last-child .nav-link {
+                .nav-item:last-child .nav-link, .nav-item:nth-child(4) .nav-link{
                     border-right: none;
                 }
+            }
+        }
+
+        .language_switch {
+            border-radius: 10px;
+            font-size: 13pt;
+            line-height: 13px;
+            border: 1px solid #696969;
+            padding: 5px;
+            margin: 0 10px;
+            text-decoration: none;
+
+            .material-icons {
+                font-size: 18pt;
+                vertical-align: middle;
             }
         }
     }
@@ -100,6 +115,18 @@ main {
             font-size: 14pt;
             font-weight: 300;
             padding: 10px 20px;
+        }
+
+        &:hover{
+            background-color: #137db8;
+            color: #fff;
+            animation: fadein 0.5s;
+            box-shadow: none;
+        }
+
+        @keyframes fadein {
+            from { opacity: 0; }
+            to   { opacity: 1; }
         }
     }
 
