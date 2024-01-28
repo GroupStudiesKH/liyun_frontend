@@ -10,9 +10,13 @@ body {
     margin: 0;
 }
 
+
 header {
     &.navbar {
         height: 150px;
+        @media(min-height: 992px){
+            height: auto;
+        }
 
         a.navbar-brand {
             height: 100%;
@@ -328,6 +332,10 @@ main {
 
                 @media (max-width: 1200px) {
                     margin: 30px auto;
+                    p {
+                        line-height: 25px;
+                        font-size: 12pt;
+                    }
                 }
 
                 @media (max-width: 768px) {
