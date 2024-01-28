@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
-                    <img src="assets/img/footer_logo.png" class="mt-5">
+                    <img src="/assets/img/footer_logo.png" class="mt-5">
                 </div>
                 <div class="col-sm-4 company_info" >
                     <p class="h2">俐元企業股份有限公司 </p>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-sm-5 copyright">
-                    <img src="assets/img/footer_iso.png">
+                    <img src="/assets/img/footer_iso.png">
                     <p>Copyright © Li Yun Enterprise Co., Ltd All rights reserved.</p>
                 </div>
             </div>

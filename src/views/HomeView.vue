@@ -28,13 +28,13 @@ export default {
   <Header />
   <main id="index">
     <div class="banner">
-      <img src="assets/img/banner_1.png" alt="" />
+      <img src="/assets/img/banner_1.png" alt="" />
     </div>
     <div id="company_info">
       <div class="row">
         <div class="col-sm-6" id="company_pic">
           <div id="blue_triangle"></div>
-          <img src="assets/img/company_pic.png" alt="" />
+          <img src="/assets/img/company_pic.png" alt="" />
         </div>
         <div class="col-sm-6" id="company_info">
           <h2>LIYUN</h2>
@@ -52,22 +52,22 @@ export default {
     <div class="container" id="intro">
       <div class="row">
         <div class="col-sm-3 badge">
-          <img src="assets/img/index_intro_innovative_badge.png" alt="" />
+          <img src="/assets/img/index_intro_innovative_badge.png" alt="" />
           <h3>創新技術</h3>
           <p class="h5">Innovative<br />technology</p>
         </div>
         <div class="col-sm-3 badge">
-          <img src="assets/img/index_intro_cooperation_badge.png" alt="" />
+          <img src="/assets/img/index_intro_cooperation_badge.png" alt="" />
           <h3>應用領域合作</h3>
           <p class="h5">Cooperation in<br />application fields</p>
         </div>
         <div class="col-sm-3 badge">
-          <img src="assets/img/index_intro_customized_badge.png" alt="" />
+          <img src="/assets/img/index_intro_customized_badge.png" alt="" />
           <h3>客製化設計</h3>
           <p class="h5">Customized<br />design</p>
         </div>
         <div class="col-sm-3 badge">
-          <img src="assets/img/index_intro_value_badge.png" alt="" />
+          <img src="/assets/img/index_intro_value_badge.png" alt="" />
           <h3>創造附加價值</h3>
           <p class="h5">Creating<br />added value</p>
         </div>
@@ -89,35 +89,35 @@ export default {
 
         <div class="row" id="industry_type">
           <div class="col-sm-3">
-            <img src="assets/img/index_application_commication.png" alt="" />
+            <img src="/assets/img/index_application_commication.png" alt="" />
             <p>電子通訊</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_battery.png" alt="" />
+            <img src="/assets/img/index_application_battery.png" alt="" />
             <p>電池</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_medi.png" alt="" />
+            <img src="/assets/img/index_application_medi.png" alt="" />
             <p>醫療</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_commication.png" alt="" />
+            <img src="/assets/img/index_application_commication.png" alt="" />
             <p>網通</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_vehicle.png" alt="" />
+            <img src="/assets/img/index_application_vehicle.png" alt="" />
             <p>車載</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_ic.png" alt="" />
+            <img src="/assets/img/index_application_ic.png" alt="" />
             <p>半導體</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_computer.png" alt="" />
+            <img src="/assets/img/index_application_computer.png" alt="" />
             <p>電腦</p>
           </div>
           <div class="col-sm-3">
-            <img src="assets/img/index_application_pos.png" alt="" />
+            <img src="/assets/img/index_application_pos.png" alt="" />
             <p>POS</p>
           </div>
         </div>
@@ -128,7 +128,7 @@ export default {
       <div class="row">
         <div class="col-sm-12">
           <h2>QUALFIED</h2>
-          <img src="assets/img/index_qualified.png" alt="" />
+          <img src="/assets/img/index_qualified.png" alt="" />
         </div>
       </div>
     </div>
