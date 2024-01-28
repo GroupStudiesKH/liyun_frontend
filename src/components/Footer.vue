@@ -2,26 +2,23 @@
     <footer class="footer bg-dark text-light">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>About Us</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisl id tincidunt dapibus, velit nunc tincidunt urna, nec tincidunt nunc nisl id lectus.</p>
+                <div class="col-sm-3">
+                    <img src="assets/img/footer_logo.png" class="mt-5">
                 </div>
-                <div class="col-md-3">
-                    <h5>Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <div class="col-sm-4 company_info" >
+                    <p class="h2">俐元企業股份有限公司 </p>
+                    <p class="h5">絕緣材料,導電布等材料供應商</p>
+
+                    <div class="address">
+                        <p>238新北市樹林區三龍街20-1號</p>
+                        <p><span class="material-icons">&#xE0BE;</span>sale121@liyun.com.tw</p>
+                        <p><span class="material-icons">&#xE8C5;</span>02-8688-8680 </p>
+                        <p><span class="material-icons">&#xEAD8;</span>02-8688-8678</p>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <h5>Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Street, City, Country</li>
-                        <li><i class="fas fa-phone"></i> +1 234 567 890</li>
-                        <li><i class="fas fa-envelope"></i> info@example.com</li>
-                    </ul>
+                <div class="col-sm-5 copyright">
+                    <img src="assets/img/footer_iso.png">
+                    <p>Copyright © Li Yun Enterprise Co., Ltd All rights reserved.</p>
                 </div>
             </div>
         </div>
