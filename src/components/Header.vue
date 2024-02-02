@@ -21,7 +21,7 @@
             <a class="nav-link" href="/">企業介紹</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="product">產品介紹</a>
+            <a class="nav-link" href="/product">產品介紹</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">應用產業</a>

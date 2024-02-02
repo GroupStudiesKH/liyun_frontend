@@ -446,6 +446,39 @@ main {
             }
         }
 
+        .askPrice{
+            margin-top: -40px;
+            border-radius: 50px;
+            width: 180px;
+            text-align: center;
+            padding: 8px 20px;
+            font-weight: 600;
+            color: #fff;
+            background-color: #d72118;
+
+            .material-icons{
+                font-size: 18pt;
+                vertical-align: top;
+            }
+
+            @media screen and (max-width: 991px){
+                margin-top: 0px;
+            }
+        }
+
+        @media screen and (min-width: 991px){
+            #productMenu{
+                display: block !important;
+                height: auto !important;
+                padding-bottom: 0;
+                overflow: visible !important;
+            }
+
+            #productMenuBtn{
+                display: none;
+            }
+        }
+
         .category{
             margin-top: 20px;
 
@@ -485,6 +518,15 @@ main {
         .list{
             margin: 30px 0;
             padding: 0 0 0 50px;
+
+            a{
+                text-decoration: none;
+                color: #000;
+                font-size: 12pt;
+                font-weight: 600;
+                padding: 5px 0;
+                display: block;
+            }
 
             @media (max-width: 991px) {
                 padding: 0 10px;
