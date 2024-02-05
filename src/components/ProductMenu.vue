@@ -8,43 +8,43 @@
         <div class="collapse col-12 category" id="productMenu">
             <div class="title">絕緣材料</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
+                <li class="list-group-item">測試中文</li>
                 <li class="list-group-item">
                     <a data-bs-toggle="collapse" href="#secondMenu" role="button" aria-expanded="false"
                         aria-controls="secondMenu">
-                        A second item
+                        測試中文
                     </a>
 
                     <div class="collapse" id="secondMenu">
                         <ul>
-                            <li>An item</li>
-                            <li>A third item</li>
-                            <li>A fourth item</li>
-                            <li>And a fifth one</li>
+                            <li>測試中文</li>
+                            <li>測試中文</li>
+                            <li>測試中文</li>
+                            <li>測試中文</li>
                         </ul>
                     </div>
                 </li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
             </ul>
 
             <div class="title">絕緣材料</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
             </ul>
 
             <div class="title">絕緣材料</div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
+                <li class="list-group-item">測試中文</li>
             </ul>
         </div>
 

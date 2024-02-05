@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 d-lg-block d-none">
-                    <img src="/assets/img/footer_logo.png" class="mt-5">
+                    <img src="/assets/img/footer_logo.png" class="mt-4">
                 </div>
                 <div class="col-lg-4 col-md-6 company_info col-12" >
                     <p class="h2">俐元企業股份有限公司 </p>
