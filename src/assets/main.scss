@@ -20,6 +20,9 @@ li {
     color: #696969 !important;
 }
 
+.btn {
+    color: #fff !important;
+}
 
 header {
     &.navbar {
@@ -237,7 +240,7 @@ main {
 
         &:hover {
             background-color: #137db8;
-            color: #fff;
+            color: #fff !important;
             animation: fadein 0.5s;
             box-shadow: none;
         }
