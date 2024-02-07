@@ -39,8 +39,8 @@ export default {
                 <div class="col-12 col-lg-10 list">
                     <div class="row">
                         <div class="col-12 route">
-                            <span class="material-icons">&#xE88A;</span>首頁 / 產品介紹 /
-                            絕緣材料 / NR-INOAC
+                            <span class="material-icons">&#xE88A;</span><a href="#">首頁</a> / <a href="#">產品介紹</a> /
+                            <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a>
                         </div>
                     </div>
                     <div class="row">

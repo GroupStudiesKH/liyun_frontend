@@ -49,55 +49,73 @@ export default {
               <div class="row">
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
                 <div class="col-6 col-lg-3">
                   <a href="/product/1">
-                    <img src="/assets/img/product_image.png" />
+                    <div class="feature_image">
+                      <img src="/assets/img/product_image.png" />
+                    </div>
                     <p>PE熱縮套管</p>
                   </a>
                 </div>
