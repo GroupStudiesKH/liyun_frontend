@@ -606,7 +606,10 @@ main {
             @media (max-width: 991px) {
                 padding: 0 10px;
             }
-
+            img{
+                width: 100%;
+            }
+            
             .feature_image{
                 img{
                     width: 100%;
