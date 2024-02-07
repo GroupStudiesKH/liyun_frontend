@@ -13,6 +13,9 @@ body {
 a {
     text-decoration: none !important;
     color: #696969 !important;
+    &:hover{
+        color: #137db8 !important;
+    }
 }
 
 li {
