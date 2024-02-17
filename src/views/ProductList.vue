@@ -22,16 +22,6 @@ export default {
       per_page: 10,
     })
 
-    // const toLastPage = () => {
-    //   router.push({ name: "final" });
-    //   playBackgroundMusic()
-    // };
-
-    // const toNextPage = () => {
-    //   router.push({ name: "intro_2" });
-    //   playBackgroundMusic()
-    // };
-
     const fetchProducts = async () => {
       try {
         const results = await apiService.getProducts(params.value);
@@ -39,10 +29,21 @@ export default {
         params.value.perPage = results.per_page;
         totalPage.value = results.total;
         products.value = results.data;
-        console.log(products.value)
       } catch (error) {
         console.log(error);
       }
+    };
+
+    const getTitle = (product) => {
+      return product.get_title_attribute.find((attr) => attr.language == currentLang.value).meta_value.length > 0 ?
+        product.get_title_attribute.find((attr) => attr.language == currentLang.value).meta_value :
+        'No Title';
+    };
+
+    const getFeatureImage = (product) => {
+      return product.get_feature_image.find((attr) => attr.language == currentLang.value).meta_value.length > 0 ?
+        product.get_feature_image.find((attr) => attr.language == currentLang.value).meta_value :
+        '/assets/img/product_image.png';
     };
 
     const changePage = async (newPage) => {
@@ -60,6 +61,8 @@ export default {
       totalPage,
       params,
       changePage,
+      getTitle,
+      getFeatureImage,
     };
   },
 };
@@ -88,9 +91,9 @@ export default {
                 <div class="col-6 col-lg-3" v-for="(product, productIndex) in products" v-key="productIndex">
                   <a :href="`product/${product.id}`">
                     <div class="feature_image">
-                      <img src="/assets/img/product_image.png" />
+                      <img :src="getFeatureImage(product)" />
                     </div>
-                    <p>{{ product.get_title_attribute.find((attr) => attr.language == currentLang).meta_value }}</p>
+                    <p>{{ getTitle(product) }}</p>
                   </a>
                 </div>
 
