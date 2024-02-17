@@ -21,7 +21,7 @@ const scGet = (url) => {
     headers: {
       "Cache-Control": "no-cache",
       "Content-type": "application/json",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
   };
 };
@@ -29,7 +29,7 @@ const scGet = (url) => {
 const scPost = (url, params, isJsonContent = true) => {
   const headers = {
     "Cache-Control": "no-cache",
-    Server_Token: getServerToken(),
+    // Server_Token: getServerToken(),
   };
   if (isJsonContent) headers["Content-type"] = "application/json";
   return {
@@ -37,7 +37,7 @@ const scPost = (url, params, isJsonContent = true) => {
     method: "POST",
     headers: {
       "Cache-Control": "no-cache",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
     data: params,
   };
@@ -50,7 +50,7 @@ const scPatch = (url, params) => {
     headers: {
       "Cache-Control": "no-cache",
       "Content-type": "application/json",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
     data: params,
   };
@@ -63,7 +63,7 @@ const scPut = (url, params) => {
     headers: {
       "Cache-Control": "no-cache",
       "Content-type": "application/json",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
     data: params,
   };
@@ -76,7 +76,7 @@ const scDelete = (url, params) => {
     headers: {
       "Cache-Control": "no-cache",
       "Content-type": "application/json",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
     data: params,
   };
@@ -89,20 +89,44 @@ const scOption = (url, params) => {
     headers: {
       "Cache-Control": "no-cache",
       "Content-type": "application/json",
-      Server_Token: getServerToken(),
+      // Server_Token: getServerToken(),
     },
     data: params,
   };
 };
 
 const checkServerResponse = (responseData) => {
-  if (!responseData.result_status) {
+  if (responseData.data.status != 'success' || responseData.status != 200) {
     // Error response
-    throw responseData.result_message;
+    throw responseData.data.message;
   }
-  return responseData.result_content;
+  return responseData.data.content;
 };
 
+const objectToQueryString = (obj) => {
+  const queryParams = [];
+
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      const encodedKey = encodeURIComponent(key);
+      const encodedValue = encodeURIComponent(value);
+      queryParams.push(`${encodedKey}=${encodedValue}`);
+    }
+  }
+
+  return queryParams.join('&');
+}
+
+const getProducts = async (params) => {
+  const requestConfig = scGet(`${apiUrl}products?${objectToQueryString(params)}`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+};
 
 //取得banner
 const getBanners = async () => {
@@ -159,4 +183,5 @@ export default {
   getNewOrderList,
   unbindLineNotify,
   setCertTradingStatus,
+  getProducts
 };
