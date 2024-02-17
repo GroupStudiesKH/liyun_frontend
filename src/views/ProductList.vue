@@ -34,7 +34,7 @@ export default {
 
     const fetchProducts = async () => {
       try {
-        const results = await apiService.getProducts(params);
+        const results = await apiService.getProducts(params.value);
         params.value.page = results.current_page;
         params.value.perPage = results.per_page;
         totalPage.value = results.total;
