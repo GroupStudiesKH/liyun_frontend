@@ -128,27 +128,15 @@ const getProducts = async (params) => {
   }
 };
 
-//取得banner
-const getBanners = async () => {
-  const requestConfig = scGet(apiUrl + "api/Sliders");
+const getProduct = async (id) => {
+  const requestConfig = scGet(`${apiUrl}products/${id}`);
   try {
     const response = await axios(requestConfig);
-    return checkServerResponse(response.data);
+    return checkServerResponse(response);
   } catch (error) {
     throw error;
   }
-};
-
-//訂單跑馬燈
-const getNewOrderList = async () => {
-  const requestConfig = scGet(apiUrl + "api/NewOrderList");
-  try {
-    const response = await axios(requestConfig);
-    return checkServerResponse(response.data);
-  } catch (error) {
-    throw error;
-  }
-};
+}
 
 //解除綁定LINE Notify
 const unbindLineNotify = async () => {
@@ -179,9 +167,8 @@ const setCertTradingStatus = async (certId, isEnable) => {
 
 
 export default {
-  getBanners,
-  getNewOrderList,
   unbindLineNotify,
   setCertTradingStatus,
-  getProducts
+  getProducts,
+  getProduct
 };

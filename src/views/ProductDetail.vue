@@ -1,28 +1,51 @@
 <script>
+import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ProductMenu from "@/components/ProductMenu.vue";
+import apiService from "@/service/api-service.js";
 
 export default {
-    components: {
-        Header,
-        Footer,
-        ProductMenu
-    },
-    setup() {
-        const router = useRouter();
+  components: {
+    Header,
+    Footer,
+    ProductMenu
+  },
+  setup() {
+    const router = useRouter();
+    const product = ref([]);
+    const currentLang = ref("zh_TW");
+    const productID = useRoute().params.id;
 
-        // const toLastPage = () => {
-        //   router.push({ name: "final" });
-        //   playBackgroundMusic()
-        // };
+    const fetchProduct = async () => {
+      try {
+        const results = await apiService.getProduct(productID);
+        product.value = results;
+        console.log(product.value)
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
-        // const toNextPage = () => {
-        //   router.push({ name: "intro_2" });
-        //   playBackgroundMusic()
-        // };
-    },
+    const getInfo = (data, dataKey) => {
+      let defaultVal = (dataKey == 'feature_image') ? '/assets/img/product_image.png' : 'No Data';
+      return data.product_detail.find((attr) => attr.language == currentLang.value && attr.meta_key == dataKey).meta_value.length > 0 ?
+      data.product_detail.find((attr) => attr.language == currentLang.value && attr.meta_key == dataKey).meta_value :
+      defaultVal;
+    };
+
+
+    onMounted(async () => {
+      await fetchProduct();
+    });
+
+    return {
+      product,
+      currentLang,
+      getInfo
+    };
+  },
 };
 </script>
 
@@ -43,16 +66,14 @@ export default {
                             <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row" v-if="Object.keys(product).length > 0">
                         <div class="col-4">
-                            <img src="/assets/img/product_image.png" />
+                            <img :src="getInfo(product, 'feature_image')" />
                         </div>
                         <div class="col-8">
-                            <h3>Inscription Printing & Screen Printing & UV inkjet Printing & Relief Printing & Poly
-                                Nameplate</h3>
+                            <h3>{{ getInfo(product, 'title') }}</h3>
                             <p>
-                                Using cutter cutting，the height of cutting is around 50mm. There is no height limited of
-                                mold and finish product has the smoothly cut surface.
+                                {{ getInfo(product, 'subtitle') }}
                             </p>
                         </div>
                         <div class="col-4">
@@ -64,25 +85,7 @@ export default {
                             </div>
                         </div>
 
-                        <div class="col-12 pt-5">
-                            <p>
-                            <p class="h6">Materials：</p>
-                            PC : Transparent PC，Matte PC，Single side Hard coating PC，Double side Hard coating PC<br>
-                            PMMA Acrylic : Transparent Acrylic，optical Acrylic<br>
-                            PET (MYLAR): Transparent PET<br>
-                            Aluminum：Natural<br>
-                            Stainless Steel (SUS)：Natural
-                            </p>
-
-                            <p>
-                            <p class="h6">Material Part numbers：</p>
-                            Matte PC：8B35，8A35，8A13，PC1860，EFR-65，DFR116ECO，FR65<br>
-                            Transparent PC：FR60<br>
-                            PMMA Acrylic : MR200<br>
-                            Transparent PET：T60<br>
-                            Aluminum：1052~5052 series<br>
-                            Stainless Steel (SUS)：301，304，430<br>
-                            </p>
+                        <div class="col-12 pt-5 content" v-html="getInfo(product, 'content')">
                         </div>
                     </div>
                 </div>
