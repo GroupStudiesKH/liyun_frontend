@@ -625,9 +625,35 @@ main {
                         transition: transform 0.5s;
                     }
                 }
-                width: 100%;
+                width: 240px;
+                height: 240px;
                 overflow: hidden;
                 border: 1px solid #ccc;
+
+                @media screen and (max-width: 1366px){
+                    width: 180px;
+                    height: 180px;
+                }
+
+                @media screen and (max-width: 1280px){
+                    width: 160px;
+                    height: 160px;
+                }
+
+                @media screen and (max-width: 991px){
+                    width: 30vw;
+                    height: 30vw;
+                }
+
+                @media screen and (max-width: 768px){
+                    width: 35vw;
+                    height: 35vw;
+                }
+
+                @media screen and (max-width: 576px){
+                    width: 40vw;
+                    height: 40vw;
+                }
             }
 
             .route{

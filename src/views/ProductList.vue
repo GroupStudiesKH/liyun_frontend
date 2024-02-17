@@ -27,7 +27,7 @@ export default {
         const results = await apiService.getProducts(params.value);
         params.value.page = results.current_page;
         params.value.perPage = results.per_page;
-        totalPage.value = results.total;
+        totalPage.value = results.last_page;
         products.value = results.data;
       } catch (error) {
         console.log(error);
@@ -101,7 +101,7 @@ export default {
               <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page - 1)">上一頁</a></li>
-                  <li class="page-item"><a role="button" class="page-link" v-for="i in totalPage" @click="changePage(i)">{{ i }}</a></li>
+                  <li class="page-item" v-for="i in totalPage" @click="changePage(i)"><a role="button" class="page-link" >{{ i }}</a></li>
                   <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page + 1)">下一頁</a></li>
                 </ul>
               </nav>
