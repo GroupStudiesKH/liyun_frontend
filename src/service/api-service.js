@@ -139,7 +139,7 @@ const getProduct = async (id) => {
 }
 
 const getAllCategory = async () => {
-  const requestConfig = scGet(`${apiUrl}categoryList`);
+  const requestConfig = scGet(`${apiUrl}category/list`);
   try {
     const response = await axios(requestConfig);
     return checkServerResponse(response);
@@ -147,6 +147,17 @@ const getAllCategory = async () => {
     throw error;
   }
 }
+
+const getCategoryPath = async (id) => {
+  const requestConfig = scGet(`${apiUrl}category/path/${id}`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+}
+
 
 //解除綁定LINE Notify
 // const unbindLineNotify = async () => {
@@ -181,5 +192,6 @@ export default {
   // setCertTradingStatus,
   getProducts,
   getProduct,
-  getAllCategory
+  getAllCategory,
+  getCategoryPath
 };
