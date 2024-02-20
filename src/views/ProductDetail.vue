@@ -17,11 +17,23 @@ export default {
     const product = ref([]);
     const currentLang = ref("zh_TW");
     const productID = useRoute().params.id;
+    const categoryPath = ref([])
 
     const fetchProduct = async () => {
       try {
         const results = await apiService.getProduct(productID);
         product.value = results;
+
+        if(product.value.category_id) getCategoryPath(product.value.category_id);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const getCategoryPath = async(categoryID) => {
+      try {
+        const results = await apiService.getCategoryPath(categoryID);
+        categoryPath.value = results;
       } catch (error) {
         console.log(error);
       }
@@ -42,7 +54,8 @@ export default {
     return {
       product,
       currentLang,
-      getInfo
+      getInfo,
+      categoryPath
     };
   },
 };
@@ -61,9 +74,15 @@ export default {
                 <div class="col-12 col-lg-10 list">
                     <div class="row">
                         <div class="col-12 route">
-                            <span class="material-icons">&#xE88A;</span><a href="#">首頁</a> / <a href="#">產品介紹</a> /
-                            <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a>
-                        </div>
+                          <span class="material-icons">&#xE88A;</span><a href="/">首頁</a> / <a href="/product">產品介紹</a> 
+                            <span v-if="product.category_id">
+                              <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
+                                / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
+                                                      return attr.language == 'zh_TW';
+                                                  }).meta_value }}</a> 
+                              </span>
+                          </span>
+                      </div>
                     </div>
                     <div class="row" v-if="Object.keys(product).length > 0">
                         <div class="col-4">

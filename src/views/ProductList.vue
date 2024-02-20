@@ -16,6 +16,7 @@ export default {
     const router = useRouter();
     const route = useRoute();
     const products = ref([]);
+    const categoryPath = ref([])
     const currentLang = ref("zh_TW");
     const totalPage = ref(0);
     const params = ref({
@@ -31,6 +32,15 @@ export default {
         params.value.perPage = results.per_page;
         totalPage.value = results.last_page;
         products.value = results.data;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    const getCategoryPath = async(categoryID) => {
+      try {
+        const results = await apiService.getCategoryPath(categoryID);
+        categoryPath.value = results;
       } catch (error) {
         console.log(error);
       }
@@ -56,6 +66,7 @@ export default {
     onMounted(async () => {
       if(route.query.category){
         params.value.category = route.query.category;
+        await getCategoryPath(route.query.category);
       }
 
       await fetchProducts();
@@ -69,6 +80,7 @@ export default {
       changePage,
       getTitle,
       getFeatureImage,
+      categoryPath
     };
   },
 };
@@ -89,8 +101,14 @@ export default {
             <div class="col-12 col-lg-10 list">
               <div class="row">
                 <div class="col-12 route">
-                  <span class="material-icons">&#xE88A;</span><a href="#">首頁</a> / <a href="#">產品介紹</a> 
-                  <span v-if="params.category.length">/ <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a></span>
+                  <span class="material-icons">&#xE88A;</span><a href="/">首頁</a> / <a href="/product">產品介紹</a> 
+                  <span v-if="params.category.length">
+                    <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
+                      / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
+                                            return attr.language == 'zh_TW';
+                                        }).meta_value }}</a> 
+                    </span>
+                  </span>
                 </div>
               </div>
               <div class="row">
