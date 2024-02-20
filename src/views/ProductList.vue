@@ -122,8 +122,8 @@ export default {
                 </div>
 
               </div>
-              <nav aria-label="Page navigation" v-if="totalPage > 1">
-                <ul class="pagination">
+              <nav aria-label="Page navigation" v-if="totalPage > 1" class="mt-5">
+                <ul class="pagination justify-content-center">
                   <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page - 1)">上一頁</a></li>
                   <li class="page-item" v-for="i in totalPage" @click="changePage(i)"><a role="button" class="page-link" >{{ i }}</a></li>
                   <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page + 1)">下一頁</a></li>
