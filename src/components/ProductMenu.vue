@@ -7,13 +7,22 @@
         </a>
         <div class="collapse col-12 category" id="productMenu">
             <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
-                <div class="title">{{ category.get_title_attribute.find((attr) => {
-                    return attr.language == 'zh_TW';
-                }).meta_value }}</div>
+                <div class="title">
+                    <a :href="`/product?category=${category.id}`">
+                        {{ category.get_title_attribute.find((attr) => {
+                            return attr.language == 'zh_TW';
+                        }).meta_value }}
+                    </a>
+                </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="(childCategory2nd, childCategory2ndIndex) in category.children" :key="childCategory2ndIndex">
                     
-                        <a v-if="childCategory2nd.children.length" data-bs-toggle="collapse" :href="`#secondMenu_${childCategory2ndIndex}`" role="button" aria-expanded="false"
+                        <a 
+                            v-if="childCategory2nd.children.length && currentCategory == childCategory2nd.id" 
+                            data-bs-toggle="collapse" 
+                            :href="`#secondMenu_${childCategory2ndIndex}`" 
+                            role="button" 
+                            aria-expanded="false"
                             :aria-controls="`secondMenu_${childCategory2ndIndex}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
                                 return attr.language == 'zh_TW';
@@ -21,7 +30,7 @@
                         </a>
 
                         
-                        <a v-else>
+                        <a v-else :href="`/product?category=${childCategory2nd.id}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
                                 return attr.language == 'zh_TW';
                             }).meta_value }}
@@ -29,10 +38,13 @@
 
                     
 
-                        <div v-if="childCategory2nd.children.length" class="collapse" :id="`secondMenu_${childCategory2ndIndex}`">
+                        <div v-if="
+                            childCategory2nd.children.length && 
+                            (currentCategory == childCategory2nd.id || childCategory2nd.children.find((child) => child.id == currentCategory))
+                        " class="collapse secondMenu show" :id="`secondMenu_${childCategory2ndIndex}`">
                             <ul>
                                 <li v-for="(childCategory3rd, childCategory3rdIndex) in childCategory2nd.children" :key="childCategory3rdIndex">
-                                    <a>{{childCategory3rd.get_title_attribute.find((attr) => {
+                                    <a :href="`/product?category=${childCategory3rd.id}`">{{childCategory3rd.get_title_attribute.find((attr) => {
                                             return attr.language == 'zh_TW';
                                         }).meta_value}}</a>
                                 </li>
@@ -56,14 +68,14 @@
 
 import apiService from "@/service/api-service.js";
 import { ref, onMounted } from "vue";
-
+import { useRouter, useRoute } from "vue-router";
 
 
 export default {
     name: "ProductMenu",
     setup() {
         const categories = ref([]);
-
+        const currentCategory = useRoute().query.category;
         const fetchCategories = async () => {
             try {
                 const results = await apiService.getAllCategory();
@@ -79,6 +91,7 @@ export default {
 
         return {
             categories,
+            currentCategory
         };
     },
 };

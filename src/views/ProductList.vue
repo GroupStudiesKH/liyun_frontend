@@ -14,12 +14,14 @@ export default {
   },
   setup() {
     const router = useRouter();
+    const route = useRoute();
     const products = ref([]);
     const currentLang = ref("zh_TW");
     const totalPage = ref(0);
     const params = ref({
       page: 1,
       per_page: 10,
+      category: '',
     })
 
     const fetchProducts = async () => {
@@ -52,6 +54,10 @@ export default {
     };
 
     onMounted(async () => {
+      if(route.query.category){
+        params.value.category = route.query.category;
+      }
+
       await fetchProducts();
     });
 
@@ -83,8 +89,8 @@ export default {
             <div class="col-12 col-lg-10 list">
               <div class="row">
                 <div class="col-12 route">
-                  <span class="material-icons">&#xE88A;</span><a href="#">首頁</a> / <a href="#">產品介紹</a> /
-                  <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a>
+                  <span class="material-icons">&#xE88A;</span><a href="#">首頁</a> / <a href="#">產品介紹</a> 
+                  <span v-if="params.category.length">/ <a href="#">絕緣材料</a> / <a href="#">NR-INOAC</a></span>
                 </div>
               </div>
               <div class="row">
@@ -98,7 +104,7 @@ export default {
                 </div>
 
               </div>
-              <nav aria-label="Page navigation example">
+              <nav aria-label="Page navigation" v-if="totalPage > 1">
                 <ul class="pagination">
                   <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page - 1)">上一頁</a></li>
                   <li class="page-item" v-for="i in totalPage" @click="changePage(i)"><a role="button" class="page-link" >{{ i }}</a></li>

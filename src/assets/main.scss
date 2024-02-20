@@ -544,6 +544,14 @@ main {
             }
         }
 
+        #productMenu{
+            .title{
+                a{
+                    color: #fff !important;
+                }
+            }
+        }
+
         @media screen and (min-width: 991px){
             #productMenu{
                 display: block !important;
@@ -571,6 +579,13 @@ main {
                 border-radius: 15px;
             }
 
+            .secondMenu{
+                ul{
+                    li{
+                        padding: 10px 0;
+                    }
+                }
+            }
 
             .list-group{
                 font-size: 12pt;
