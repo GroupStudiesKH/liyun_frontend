@@ -47,7 +47,7 @@ export default {
     };
 
     const changePage = async (newPage) => {
-      page.value = newPage;
+      params.value.page = newPage;
       await fetchProducts();
     };
 

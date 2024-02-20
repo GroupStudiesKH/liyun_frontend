@@ -22,7 +22,6 @@ export default {
       try {
         const results = await apiService.getProduct(productID);
         product.value = results;
-        console.log(product.value)
       } catch (error) {
         console.log(error);
       }

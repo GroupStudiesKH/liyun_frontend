@@ -138,37 +138,48 @@ const getProduct = async (id) => {
   }
 }
 
-//解除綁定LINE Notify
-const unbindLineNotify = async () => {
-  const requestConfig = scDelete(apiUrl + "api/LineNotifyAccessToken");
+const getAllCategory = async () => {
+  const requestConfig = scGet(`${apiUrl}categoryList`);
   try {
     const response = await axios(requestConfig);
-    return checkServerResponse(response.data);
+    return checkServerResponse(response);
   } catch (error) {
     throw error;
   }
-};
+}
+
+//解除綁定LINE Notify
+// const unbindLineNotify = async () => {
+//   const requestConfig = scDelete(apiUrl + "api/LineNotifyAccessToken");
+//   try {
+//     const response = await axios(requestConfig);
+//     return checkServerResponse(response.data);
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 
 //技能一鍵上下架
-const setCertTradingStatus = async (certId, isEnable) => {
-  const param = {
-    CertId: certId,
-    IsEnable: isEnable,
-  };
-  const requestConfig = scPut(apiUrl + "api/Certification/SetEnable", param);
-  try {
-    const response = await axios(requestConfig);
-    return checkServerResponse(response.data);
-  } catch (error) {
-    throw error;
-  }
-};
+// const setCertTradingStatus = async (certId, isEnable) => {
+//   const param = {
+//     CertId: certId,
+//     IsEnable: isEnable,
+//   };
+//   const requestConfig = scPut(apiUrl + "api/Certification/SetEnable", param);
+//   try {
+//     const response = await axios(requestConfig);
+//     return checkServerResponse(response.data);
+//   } catch (error) {
+//     throw error;
+//   }
+// };
 
 
 export default {
-  unbindLineNotify,
-  setCertTradingStatus,
+  // unbindLineNotify,
+  // setCertTradingStatus,
   getProducts,
-  getProduct
+  getProduct,
+  getAllCategory
 };
