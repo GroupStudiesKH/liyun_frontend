@@ -89,8 +89,8 @@ export default {
                             <img :src="getInfo(product, 'feature_image')" />
                         </div>
                         <div class="col-8">
-                            <h3>{{ getInfo(product, 'title') }}</h3>
-                            <p>
+                            <h3 class="title">{{ getInfo(product, 'title') }}</h3>
+                            <p class="subtitle">
                                 {{ getInfo(product, 'subtitle') }}
                             </p>
                         </div>
