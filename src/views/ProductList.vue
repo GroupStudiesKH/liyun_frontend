@@ -115,7 +115,8 @@ export default {
                 <div class="col-6 col-lg-3" v-for="(product, productIndex) in products" v-key="productIndex">
                   <a :href="`product/${product.id}`">
                     <div class="feature_image">
-                      <img :src="getFeatureImage(product)" />
+                      <div class="img" :style="`background-image: url('${getFeatureImage(product)}')`">
+                      </div>
                     </div>
                     <p>{{ getTitle(product) }}</p>
                   </a>
