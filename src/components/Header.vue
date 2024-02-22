@@ -67,7 +67,7 @@ export default {
     const { t, locale } = useI18n();
     const localeOptions = ref([
       {
-        lang: 'en',
+        lang: 'eng',
         name: 'English'
       },
       {

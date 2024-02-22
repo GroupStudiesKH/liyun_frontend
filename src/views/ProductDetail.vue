@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ProductMenu from "@/components/ProductMenu.vue";
 import apiService from "@/service/api-service.js";
+import { useI18n } from "vue-i18n";
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     const currentLang = ref("zh_TW");
     const productID = useRoute().params.id;
     const categoryPath = ref([])
+    const { locale } = useI18n();
 
     const fetchProduct = async () => {
       try {
@@ -41,8 +43,8 @@ export default {
 
     const getInfo = (data, dataKey) => {
       let defaultVal = (dataKey == 'feature_image') ? '/assets/img/product_image.png' : 'No Data';
-      return data.product_detail.find((attr) => attr.language == currentLang.value && attr.meta_key == dataKey).meta_value.length > 0 ?
-      data.product_detail.find((attr) => attr.language == currentLang.value && attr.meta_key == dataKey).meta_value :
+      return data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value.length > 0 ?
+      data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value :
       defaultVal;
     };
 
@@ -55,7 +57,8 @@ export default {
       product,
       currentLang,
       getInfo,
-      categoryPath
+      categoryPath,
+      locale
     };
   },
 };
