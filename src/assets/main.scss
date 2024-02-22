@@ -197,7 +197,7 @@ footer {
         .address {
             margin-top: 20px;
             border-left: 2px solid #fff;
-            line-height: 10px;
+            line-height: 15px;
             padding-left: 10px;
 
             .material-icons {
@@ -350,35 +350,39 @@ main {
 
                 @media (max-width: 1280px) {
                     height: 500px;
-
+                    padding: 0;
                     img {
                         height: 380px;
+                        margin: 80px 0px 0 0;
                     }
                 }
 
                 @media (max-width: 1200px) {
                     height: 450px;
-
+                    padding: 0;
                     img {
                         height: 300px;
+                        margin: 80px 30px 0 0;
                     }
                 }
 
                 @media (max-width: 992px) {
                     height: 400px;
-
+                    padding: 0;
                     img {
                         height: 250px;
+                        margin: 80px 30px 0 0;
                     }
                 }
 
                 @media (max-width: 768px) {
                     background-image: none;
                     height: auto;
-
+                    padding: 0;
                     img {
                         height: auto;
                         width: 100%;
+                        margin: 80px 30px 0 0;
                     }
                 }
 
