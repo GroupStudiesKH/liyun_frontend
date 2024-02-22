@@ -42,7 +42,9 @@ export default {
 
     const getInfo = (data, dataKey) => {
       let defaultVal = (dataKey == 'feature_image') ? '/assets/img/product_image.png' : 'No Data';
-      return data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value != null ?
+      return data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value != null &&
+      data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value != ''
+      ?
       data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value :
       defaultVal;
     };

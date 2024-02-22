@@ -49,13 +49,17 @@ export default {
     };
 
     const getTitle = (product) => {
-      return product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value != null ?
+      return product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value != null &&
+      product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value != ''
+      ?
         product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value :
         'No Title';
     };
 
     const getFeatureImage = (product) => {
-      return product.get_feature_image.find((attr) => attr.language == locale.value).meta_value != null ?
+      return product.get_feature_image.find((attr) => attr.language == locale.value).meta_value != null &&
+      product.get_feature_image.find((attr) => attr.language == locale.value).meta_value != ''
+      ?
         product.get_feature_image.find((attr) => attr.language == locale.value).meta_value :
         '/assets/img/product_image.png';
     };
