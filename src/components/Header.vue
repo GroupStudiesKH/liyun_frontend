@@ -47,9 +47,9 @@
                   <span>Language</span>
                 </a>
               </li>
-              <li><a class="dropdown-item" href="#">繁體中文</a></li>
-              <li><a class="dropdown-item" href="#">ENGLISH</a></li>
-              <li><a class="dropdown-item" href="#">日本語</a></li>
+              <li v-for="(lOption, lOptionIndex) in localeOptions" :key="lOptionIndex">
+                <a class="dropdown-item" role="button" @click="locale = `${lOption.lang}`">{{ lOption.name }}</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -60,11 +60,31 @@
 
 <script>
 import { useI18n } from "vue-i18n";
+import { ref } from "vue";
 export default {
   name: "Header",
   setup() {
-    const { t } = useI18n();
-    return { t };
+    const { t, locale } = useI18n();
+    const localeOptions = ref([
+      {
+        lang: 'en',
+        name: 'English'
+      },
+      {
+        lang: 'zh_TW',
+        name: '繁體中文'
+      },
+      {
+        lang: 'jp',
+        name: '日本語'
+      }
+    ])
+    
+    return { 
+      t, 
+      locale,
+      localeOptions
+    };
   },
 };
 </script>

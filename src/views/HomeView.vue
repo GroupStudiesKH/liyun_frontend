@@ -14,7 +14,7 @@ export default {
   setup() {
     const router = useRouter();
     const isIntroScolled = ref(false)
-    const { t } = useI18n();
+    const { t, locale  } = useI18n();
 
     const handleScroll = () => {
       // 獲取目標div的相對位置

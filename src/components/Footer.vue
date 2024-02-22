@@ -6,14 +6,14 @@
                     <img src="/assets/img/footer_logo.png" class="mt-4">
                 </div>
                 <div class="col-lg-4 col-md-6 company_info col-12" >
-                    <p class="h2">{{ t('footer.company') }}</p>
-                    <p class="h5">{{ t('footer.intro') }}</p>
+                    <p class="h2">{{ $t('footer.company') }}</p>
+                    <p class="h5">{{ $t('footer.intro') }}</p>
 
                     <div class="address">
-                        <p>{{ t('footer.address') }}</p>
-                        <p><span class="material-icons">&#xE0BE;</span>{{ t('footer.email') }}</p>
-                        <p><span class="material-icons">&#xE8C5;</span>{{ t('footer.phone') }}</p>
-                        <p><span class="material-icons">&#xEAD8;</span>{{ t('footer.fax') }}</p>
+                        <p>{{ $t('footer.address') }}</p>
+                        <p><span class="material-icons">&#xE0BE;</span>{{ $t('footer.email') }}</p>
+                        <p><span class="material-icons">&#xE8C5;</span>{{ $t('footer.phone') }}</p>
+                        <p><span class="material-icons">&#xEAD8;</span>{{ $t('footer.fax') }}</p>
                     </div>
                 </div>
                 <div class="col-lg-5 copyright col-12">
@@ -26,14 +26,9 @@
 </template>
 
 <script>
-import { useI18n } from "vue-i18n";
 export default {
     name: 'Footer',
     setup() {
-        const { t } = useI18n();
-        return {
-            t
-        }
     }
 }
 </script>
