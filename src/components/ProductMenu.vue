@@ -10,7 +10,7 @@
                 <div class="title">
                     <a :href="`/product?category=${category.id}`">
                         {{ category.get_title_attribute.find((attr) => {
-                            return attr.language == 'zh_TW';
+                            return attr.language == locale;
                         }).meta_value }}
                     </a>
                 </div>
@@ -25,14 +25,14 @@
                             aria-expanded="false"
                             :aria-controls="`secondMenu_${childCategory2ndIndex}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
-                                return attr.language == 'zh_TW';
+                                return attr.language == locale;
                             }).meta_value }}
                         </a>
 
                         
                         <a v-else :href="`/product?category=${childCategory2nd.id}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
-                                return attr.language == 'zh_TW';
+                                return attr.language == locale;
                             }).meta_value }}
                         </a>
 
@@ -45,7 +45,7 @@
                             <ul>
                                 <li v-for="(childCategory3rd, childCategory3rdIndex) in childCategory2nd.children" :key="childCategory3rdIndex">
                                     <a :href="`/product?category=${childCategory3rd.id}`">{{childCategory3rd.get_title_attribute.find((attr) => {
-                                            return attr.language == 'zh_TW';
+                                            return attr.language == locale;
                                         }).meta_value}}</a>
                                 </li>
                             </ul>
@@ -69,11 +69,12 @@
 import apiService from "@/service/api-service.js";
 import { ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
+import { useI18n } from "vue-i18n";
 
 export default {
     name: "ProductMenu",
     setup() {
+        const { t, locale } = useI18n();
         const categories = ref([]);
         const currentCategory = useRoute().query.category;
         const fetchCategories = async () => {
@@ -91,7 +92,8 @@ export default {
 
         return {
             categories,
-            currentCategory
+            currentCategory,
+            locale
         };
     },
 };
