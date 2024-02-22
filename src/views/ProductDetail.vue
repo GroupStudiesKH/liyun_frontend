@@ -16,7 +16,6 @@ export default {
   setup() {
     const router = useRouter();
     const product = ref([]);
-    const currentLang = ref("zh_TW");
     const productID = useRoute().params.id;
     const categoryPath = ref([])
     const { locale } = useI18n();
@@ -43,7 +42,7 @@ export default {
 
     const getInfo = (data, dataKey) => {
       let defaultVal = (dataKey == 'feature_image') ? '/assets/img/product_image.png' : 'No Data';
-      return data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value.length > 0 ?
+      return data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value != null ?
       data.product_detail.find((attr) => attr.language == locale.value && attr.meta_key == dataKey).meta_value :
       defaultVal;
     };
@@ -55,7 +54,6 @@ export default {
 
     return {
       product,
-      currentLang,
       getInfo,
       categoryPath,
       locale
@@ -81,7 +79,7 @@ export default {
                             <span v-if="product.category_id">
                               <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
                                 / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
-                                                      return attr.language == 'zh_TW';
+                                                      return attr.language == locale;
                                                   }).meta_value }}</a> 
                               </span>
                           </span>

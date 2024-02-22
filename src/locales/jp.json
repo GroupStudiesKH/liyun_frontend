@@ -9,7 +9,7 @@
         "address": "台湾新北市樹林区三龍街20-1番地",
         "phone": "02-8688-8680",
         "fax": "02-8688-8678",
-        "email": "sale121@liyun.com.tw",
+        "email": "{'sale121@liyun.com.tw'}",
         "company": "リユンエンタープライズ株式会社",
         "intro": "絶縁材料、導電布などの材料サプライヤー"
     },

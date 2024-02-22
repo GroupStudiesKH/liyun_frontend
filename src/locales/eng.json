@@ -9,7 +9,7 @@
     "address": "No. 20-1, Sanlong Street, Shulin District, New Taipei City 238, Taiwan",
     "phone": "02-8688-8680",
     "fax": "02-8688-8678",
-    "email": "sale121@liyun.com.tw",
+    "email": "{'sale121@liyun.com.tw'}",
     "company": "Liyun Enterprise Co., Ltd.",
     "intro": "Supplier of insulation materials, conductive fabrics, etc."
   },
@@ -18,7 +18,7 @@
     "feature1": "Innovative Technology",
     "feature1_subtitle": "Innovative <br/> technology",
     "feature2": "Collaboration in Application Fields",
-    "feature2_subtitle": "Cooperation in application fields",
+    "feature2_subtitle": "Cooperation <br/> in application fields",
     "feature3": "Customized Service",
     "feature3_subtitle": "Customized service",
     "feature4": "Creating Added Value",

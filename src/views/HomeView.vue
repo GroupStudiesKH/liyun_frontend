@@ -44,7 +44,8 @@ export default {
 
     return {
       isIntroScolled,
-      t
+      t,
+      locale
     };
   },
 };
@@ -74,22 +75,22 @@ export default {
       <div class="row">
         <div class="col-6 col-md-3 badge">
           <img src="/assets/img/index_intro_innovative_badge.png" alt="" />
-          <h3 v-html="t('index.feature1')"></h3>
+          <h3 v-html="t('index.feature1')" v-if="locale != 'eng'"></h3>
           <p class="h5" v-html="t('index.feature1_subtitle')"></p>
         </div>
         <div class="col-6 col-md-3 badge">
           <img src="/assets/img/index_intro_cooperation_badge.png" alt="" />
-          <h3 v-html="t('index.feature2')"></h3>
+          <h3 v-html="t('index.feature2')" v-if="locale != 'eng'"></h3>
           <p class="h5" v-html="t('index.feature2_subtitle')"></p>
         </div>
         <div class="col-6 col-md-3 badge">
           <img src="/assets/img/index_intro_customized_badge.png" alt="" />
-          <h3 v-html="t('index.feature3')"></h3>
+          <h3 v-html="t('index.feature3')" v-if="locale != 'eng'"></h3>
           <p class="h5" v-html="t('index.feature3_subtitle')"></p>
         </div>
         <div class="col-6 col-md-3 badge">
           <img src="/assets/img/index_intro_value_badge.png" alt="" />
-          <h3 v-html="t('index.feature4')"></h3>
+          <h3 v-html="t('index.feature4')" v-if="locale != 'eng'"></h3>
           <p class="h5" v-html="t('index.feature4_subtitle')"></p>
         </div>
       </div>

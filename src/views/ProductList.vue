@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ProductMenu from "@/components/ProductMenu.vue";
 import apiService from "@/service/api-service.js";
+import { useI18n } from "vue-i18n";
 
 export default {
   components: {
@@ -17,8 +18,8 @@ export default {
     const route = useRoute();
     const products = ref([]);
     const categoryPath = ref([])
-    const currentLang = ref("zh_TW");
     const totalPage = ref(0);
+    const { locale } = useI18n();
     const params = ref({
       page: 1,
       per_page: 10,
@@ -47,14 +48,14 @@ export default {
     };
 
     const getTitle = (product) => {
-      return product.get_title_attribute.find((attr) => attr.language == currentLang.value).meta_value.length > 0 ?
-        product.get_title_attribute.find((attr) => attr.language == currentLang.value).meta_value :
+      return product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value != null ?
+        product.get_title_attribute.find((attr) => attr.language == locale.value).meta_value :
         'No Title';
     };
 
     const getFeatureImage = (product) => {
-      return product.get_feature_image.find((attr) => attr.language == currentLang.value).meta_value.length > 0 ?
-        product.get_feature_image.find((attr) => attr.language == currentLang.value).meta_value :
+      return product.get_feature_image.find((attr) => attr.language == locale.value).meta_value != null ?
+        product.get_feature_image.find((attr) => attr.language == locale.value).meta_value :
         '/assets/img/product_image.png';
     };
 
@@ -74,7 +75,7 @@ export default {
 
     return {
       products,
-      currentLang,
+      locale,
       totalPage,
       params,
       changePage,
@@ -105,7 +106,7 @@ export default {
                   <span v-if="params.category.length">
                     <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
                       / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
-                                            return attr.language == 'zh_TW';
+                                            return attr.language == locale;
                                         }).meta_value }}</a> 
                     </span>
                   </span>
@@ -125,9 +126,9 @@ export default {
               </div>
               <nav aria-label="Page navigation" v-if="totalPage > 1" class="mt-5">
                 <ul class="pagination justify-content-center">
-                  <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page - 1)">上一頁</a></li>
+                  <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page - 1)">⟨</a></li>
                   <li class="page-item" v-for="i in totalPage" @click="changePage(i)"><a role="button" class="page-link" >{{ i }}</a></li>
-                  <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page + 1)">下一頁</a></li>
+                  <li class="page-item"><a role="button" class="page-link" @click="changePage(params.page + 1)">⟩</a></li>
                 </ul>
               </nav>
             </div>
