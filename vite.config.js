@@ -14,5 +14,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'docs'
+  },
+  define: {
+    'process.env': {}
   }
 })
