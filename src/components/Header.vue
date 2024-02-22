@@ -18,16 +18,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">{{ t("header.companyIntro") }}</a>
+            <router-link class="nav-link" to="/">{{ t("header.companyIntro") }}</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/product">{{ t("header.product") }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{ t("header.applied") }}</a>
+            <router-link class="nav-link" to="#">{{ t("header.applied") }}</router-link>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">{{ t("header.contact") }}</a>
+            <router-link class="nav-link" to="#">{{ t("header.contact") }}</router-link>
           </li>
           <li class="nav-item language_switch dropdown">
             <div

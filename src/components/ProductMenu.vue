@@ -8,11 +8,11 @@
         <div class="collapse col-12 category" id="productMenu">
             <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
                 <div class="title">
-                    <a :href="`/product?category=${category.id}`">
+                    <router-link :to="`/product/category/${category.id}`">
                         {{ category.get_title_attribute.find((attr) => {
                             return attr.language == locale;
                         }).meta_value }}
-                    </a>
+                    </router-link>
                 </div>
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item" v-for="(childCategory2nd, childCategory2ndIndex) in category.children" :key="childCategory2ndIndex">
@@ -30,7 +30,7 @@
                         </a>
 
                         
-                        <a v-else :href="`/product?category=${childCategory2nd.id}`">
+                        <a v-else :href="`/product/category/${childCategory2nd.id}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
                                 return attr.language == locale;
                             }).meta_value }}
@@ -44,9 +44,9 @@
                         " class="collapse secondMenu show" :id="`secondMenu_${childCategory2ndIndex}`">
                             <ul>
                                 <li v-for="(childCategory3rd, childCategory3rdIndex) in childCategory2nd.children" :key="childCategory3rdIndex">
-                                    <a :href="`/product?category=${childCategory3rd.id}`">{{childCategory3rd.get_title_attribute.find((attr) => {
+                                    <router-link :to="`/product/category/${childCategory3rd.id}`">{{childCategory3rd.get_title_attribute.find((attr) => {
                                             return attr.language == locale;
-                                        }).meta_value}}</a>
+                                        }).meta_value}}</router-link>
                                 </li>
                             </ul>
                         </div>

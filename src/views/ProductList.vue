@@ -17,6 +17,7 @@ export default {
     const router = useRouter();
     const route = useRoute();
     const products = ref([]);
+    const catID = useRoute().params.categoryID;
     const categoryPath = ref([])
     const totalPage = ref(0);
     const { locale } = useI18n();
@@ -65,9 +66,9 @@ export default {
     };
 
     onMounted(async () => {
-      if(route.query.category){
-        params.value.category = route.query.category;
-        await getCategoryPath(route.query.category);
+      if(catID){
+        params.value.category = catID;
+        await getCategoryPath(catID);
       }
 
       await fetchProducts();
@@ -105,22 +106,22 @@ export default {
                   <span class="material-icons">&#xE88A;</span><a href="/">首頁</a> / <a href="/product">產品介紹</a> 
                   <span v-if="params.category.length">
                     <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
-                      / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
+                      / <router-link :to="`/product/category/${path.id}`">{{ path.get_title_attribute.find((attr) => {
                                             return attr.language == locale;
-                                        }).meta_value }}</a> 
+                                        }).meta_value }}</router-link> 
                     </span>
                   </span>
                 </div>
               </div>
               <div class="row">
                 <div class="col-6 col-lg-3" v-for="(product, productIndex) in products" v-key="productIndex">
-                  <a :href="`product/${product.id}`">
+                  <router-link :to="`/product/${product.id}`">
                     <div class="feature_image">
                       <div class="img" :style="`background-image: url('${getFeatureImage(product)}')`">
                       </div>
                     </div>
                     <p>{{ getTitle(product) }}</p>
-                  </a>
+                  </router-link>
                 </div>
 
               </div>

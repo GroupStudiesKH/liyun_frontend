@@ -78,9 +78,9 @@ export default {
                           <span class="material-icons">&#xE88A;</span><a href="/">首頁</a> / <a href="/product">產品介紹</a> 
                             <span v-if="product.category_id">
                               <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
-                                / <a :href="`/product?category=${path.id}`">{{ path.get_title_attribute.find((attr) => {
+                                / <router-link :to="`/product/category/${path.id}`">{{ path.get_title_attribute.find((attr) => {
                                                       return attr.language == locale;
-                                                  }).meta_value }}</a> 
+                                                  }).meta_value }}</router-link> 
                               </span>
                           </span>
                       </div>
