@@ -48,7 +48,7 @@
                 </a>
               </li>
               <li v-for="(lOption, lOptionIndex) in localeOptions" :key="lOptionIndex">
-                <a class="dropdown-item" role="button" @click="locale = `${lOption.lang}`">{{ lOption.name }}</a>
+                <a class="dropdown-item" role="button" @click="setLocale(lOption.lang)">{{ lOption.name }}</a>
               </li>
             </ul>
           </li>
@@ -79,10 +79,16 @@ export default {
         name: '日本語'
       }
     ])
+
+    const setLocale = (lang) => {
+      locale.value = lang;
+      localStorage.setItem('locale', lang);
+    }
     
     return { 
       t, 
       locale,
+      setLocale,
       localeOptions
     };
   },
