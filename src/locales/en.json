@@ -1,0 +1,41 @@
+{
+  "header": {
+    "companyIntro": "Company Introduction",
+    "product": "Product Introduction",
+    "applied": "Applied Industries",
+    "contact": "Contact Inquiry"
+  },
+  "footer": {
+    "address": "No. 20-1, Sanlong Street, Shulin District, New Taipei City 238, Taiwan",
+    "phone": "02-8688-8680",
+    "fax": "02-8688-8678",
+    "email": "sale121@liyun.com.tw",
+    "company": "Liyun Enterprise Co., Ltd.",
+    "intro": "Supplier of insulation materials, conductive fabrics, etc."
+  },
+  "index": {
+    "intro": "<b>Liyun Enterprise Co., Ltd.</b> was founded in September 1987, initially engaged in the processing of materials such as red shell paper, electric wood boards, insulating paper, Mylar, Film, Nomex, copper foil (coil), etc. It has now expanded to include EMI prevention products. Due to the emphasis on customer needs and services, in recent years, the company has been dedicated to researching the latest technologies, increasing machinery and equipment, strengthening the production of insulation materials for various technological products such as electronics, communications, computers, and peripherals, providing a variety of high-quality products, and using laser machinery for sampling to serve customers.",
+    "feature1": "Innovative Technology",
+    "feature1_subtitle": "Innovative <br/> technology",
+    "feature2": "Collaboration in Application Fields",
+    "feature2_subtitle": "Cooperation in application fields",
+    "feature3": "Customized Service",
+    "feature3_subtitle": "Customized service",
+    "feature4": "Creating Added Value",
+    "feature4_subtitle": "Create added value",
+    "application": {
+      "intro": "Liyun constantly innovates technology and actively researches and develops high-quality insulation materials, conductive fabrics, conductive fabric foam, foam, fireproof adhesive tapes, absorbing materials, and conductive copper foil, etc. It adds the latest technology production equipment to produce a series of precise specifications, ultra-high quality, and user-friendly products, establishing a good reputation in the industry.",
+      "product1": "Electronic Communication",
+      "product2": "Battery",
+      "product3": "Medical",
+      "product4": "Networking",
+      "product5": "Automotive",
+      "product6": "Semiconductor",
+      "product7": "Computer",
+      "product8": "POS"
+    }
+  },
+  "product": {
+    "addAskPrice": "Add to Inquiry List"
+  }
+}

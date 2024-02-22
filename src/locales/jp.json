@@ -1,0 +1,41 @@
+{
+    "header": {
+        "companyIntro": "企業紹介",
+        "product": "製品紹介",
+        "applied": "応用産業",
+        "contact": "お問い合わせ"
+    },
+    "footer": {
+        "address": "台湾新北市樹林区三龍街20-1番地",
+        "phone": "02-8688-8680",
+        "fax": "02-8688-8678",
+        "email": "sale121@liyun.com.tw",
+        "company": "リユンエンタープライズ株式会社",
+        "intro": "絶縁材料、導電布などの材料サプライヤー"
+    },
+    "index": {
+        "intro": "<b>リユンエンタープライズ株式会社</b>は1987年9月に創立され、当初は赤いシェル、電気木材板、絶縁紙、マイラー、フィルム、ノーメックス、銅箔（巻き取り）などの加工に従事しており、現在はEMI防止製品にも展開しています。お客様のニーズとサービスを重視し、近年は最新技術の研究開発に注力し、機械設備を増やし、電子、通信、コンピューターおよび周辺機器などのさまざまな科学技術製品の絶縁材料を強化し、各種高品質の製品を提供し、レーザーマシンを使用して顧客にサービスを提供しています。",
+        "feature1": "革新的な技術",
+        "feature1_subtitle": "Innovative <br/> technology",
+        "feature2": "アプリケーション分野での協力",
+        "feature2_subtitle": "Cooperation in application fields",
+        "feature3": "カスタマイズされたサービス",
+        "feature3_subtitle": "Customized service",
+        "feature4": "付加価値の創出",
+        "feature4_subtitle": "Create added value",
+        "application": {
+            "intro": "リユンは常に革新的な技術を取り入れ、積極的に研究開発を行い、高品質の絶縁材料、導電布、導電布泡棉、泡棉、防火テープ、吸波材および導電銅箔などを生産し、最新の科学技術製品製造設備を導入し、精密で高品質、使いやすい製品シリーズを生産し、業界で良好な評判を築いています。",
+            "product1": "電子通信",
+            "product2": "バッテリー",
+            "product3": "医療",
+            "product4": "ネットワーク通信",
+            "product5": "車載",
+            "product6": "半導体",
+            "product7": "コンピューター",
+            "product8": "POSシステム"
+        }
+    },
+    "product": {
+        "addAskPrice": "見積もりリストに追加"
+    }
+}
