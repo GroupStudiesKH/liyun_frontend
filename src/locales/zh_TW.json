@@ -35,5 +35,8 @@
       "product7": "電腦",
       "product8": "POS"
     }
+  },
+  "product":{
+    "addAskPrice": "加入詢價清單"
   }
 }

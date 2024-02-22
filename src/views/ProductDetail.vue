@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ProductMenu from "@/components/ProductMenu.vue";
 import apiService from "@/service/api-service.js";
+import { useI18n } from "vue-i18n";
 
 export default {
   components: {
@@ -18,6 +19,7 @@ export default {
     const currentLang = ref("zh_TW");
     const productID = useRoute().params.id;
     const categoryPath = ref([])
+    const { t } = useI18n();
 
     const fetchProduct = async () => {
       try {
@@ -55,7 +57,8 @@ export default {
       product,
       currentLang,
       getInfo,
-      categoryPath
+      categoryPath,
+      t
     };
   },
 };
@@ -98,7 +101,7 @@ export default {
                         </div>
                         <div class="col-8">
                             <div class="askPrice">
-                                加入詢價表單
+                                {{ t("product.addAskPrice") }}
                                 <span class="material-icons">&#xEA20;</span>
                             </div>
                         </div>
