@@ -18,16 +18,16 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">企業介紹</a>
+            <a class="nav-link" href="/">{{ t("header.companyIntro") }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/product">產品介紹</a>
+            <a class="nav-link" href="/product">{{ t("header.product") }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">應用產業</a>
+            <a class="nav-link" href="#">{{ t("header.applied") }}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">聯絡詢價</a>
+            <a class="nav-link" href="#">{{ t("header.contact") }}</a>
           </li>
           <li class="nav-item language_switch dropdown">
             <div
@@ -59,8 +59,13 @@
 </template>
 
 <script>
+import { useI18n } from "vue-i18n";
 export default {
   name: "Header",
+  setup() {
+    const { t } = useI18n();
+    return { t };
+  },
 };
 </script>
 
