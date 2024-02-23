@@ -96,7 +96,8 @@ header {
                 }
             }
 
-            @media (max-width: 992px) {
+            @media (max-width: 992px)  {
+                box-shadow: 0px 10px 10px #666;
                 background-color: #fff;
                 z-index: 99;
 
@@ -115,6 +116,8 @@ header {
                 }
 
             }
+
+
         }
 
         .language_switch {
@@ -310,30 +313,38 @@ main {
                 img {
                     width: 100%;
                 }
+
+                @media screen and (max-width: 992px){
+                    margin-top: 0px;
+                    opacity: 1;
+                }
             }
 
-            &.scrolled .badge{
+            @media screen and (min-width: 992px){
+                &.scrolled .badge{
                 
-                &:nth-child(1){
-                    animation: fadein 0.5s;
-                    animation-fill-mode: forwards;
-                }
-
-                &:nth-child(2){
-                    animation: fadein 1s;
-                    animation-fill-mode: forwards;
-                }
-
-                &:nth-child(3){
-                    animation: fadein 1.5s;
-                    animation-fill-mode: forwards;
-                }
-
-                &:nth-child(4){
-                    animation: fadein 2s;
-                    animation-fill-mode: forwards;
+                    &:nth-child(1){
+                        animation: fadein 0.5s;
+                        animation-fill-mode: forwards;
+                    }
+    
+                    &:nth-child(2){
+                        animation: fadein 1s;
+                        animation-fill-mode: forwards;
+                    }
+    
+                    &:nth-child(3){
+                        animation: fadein 1.5s;
+                        animation-fill-mode: forwards;
+                    }
+    
+                    &:nth-child(4){
+                        animation: fadein 2s;
+                        animation-fill-mode: forwards;
+                    }
                 }
             }
+
         }
 
         @keyframes fadein {
