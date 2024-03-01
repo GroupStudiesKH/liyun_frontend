@@ -128,6 +128,16 @@ const getProducts = async (params) => {
   }
 };
 
+const getBanner = async () => {
+  const requestConfig = scGet(`${apiUrl}home-banner`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+}
+
 const getProduct = async (id) => {
   const requestConfig = scGet(`${apiUrl}products/${id}`);
   try {
@@ -188,10 +198,9 @@ const getCategoryPath = async (id) => {
 
 
 export default {
-  // unbindLineNotify,
-  // setCertTradingStatus,
   getProducts,
   getProduct,
   getAllCategory,
-  getCategoryPath
+  getCategoryPath,
+  getBanner
 };

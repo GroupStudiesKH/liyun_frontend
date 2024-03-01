@@ -5,6 +5,7 @@ import { onMounted, ref } from "vue";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import { useI18n } from "vue-i18n";
+import apiService from "@/service/api-service.js";
 
 export default {
   components: {
@@ -13,8 +14,18 @@ export default {
   },
   setup() {
     const router = useRouter();
-    const isIntroScolled = ref(false)
-    const { t, locale  } = useI18n();
+    const isIntroScolled = ref(false);
+    const { t, locale } = useI18n();
+    const bannerLists = ref([]);
+
+    const fetchBanner = async () => {
+      try {
+        const results = await apiService.getBanner();
+        bannerLists.value = results;
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
     const handleScroll = () => {
       // 獲取目標div的相對位置
@@ -24,9 +35,9 @@ export default {
 
       // 判斷是否在可視範圍內
       if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-        isIntroScolled.value = true
+        isIntroScolled.value = true;
       }
-    }
+    };
 
     // const toLastPage = () => {
     //   router.push({ name: "final" });
@@ -40,12 +51,14 @@ export default {
 
     onMounted(() => {
       window.addEventListener("scroll", handleScroll);
+      fetchBanner();
     });
 
     return {
       isIntroScolled,
       t,
-      locale
+      locale,
+      bannerLists,
     };
   },
 };
@@ -54,9 +67,37 @@ export default {
 <template>
   <Header />
   <main id="index">
-    <div class="banner">
-      <img src="/assets/img/banner_1.png" alt="" />
+    <div class="banner"></div>
+    <div id="bannerCarousel" class="carousel slide">
+      <div class="carousel-inner banner">
+        <div class="carousel-item" :class="bannerIndex == 0 ? `active` : ``" v-for="(banner, bannerIndex) in bannerLists" :key="bannerIndex">
+          <a
+            :href="banner.link"
+          >
+            <img :src="banner.img_url" alt="" />
+          </a>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#bannerCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#bannerCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+
     <div id="company_info">
       <div class="row">
         <div class="col-md-6 col-lg-6 col-12" id="company_pic">
@@ -102,7 +143,7 @@ export default {
           <div class="col-sm-12" id="applications_title">
             <h2>APPLICATIONS</h2>
             <p>
-              {{ t('index.application.intro') }}
+              {{ t("index.application.intro") }}
             </p>
             <a href="#" class="pill_button"> Learn More </a>
           </div>
@@ -111,35 +152,35 @@ export default {
         <div class="row" id="industry_type">
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_commication.png" alt="" />
-            <p>{{ t('index.application.product1') }}</p>
+            <p>{{ t("index.application.product1") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_battery.png" alt="" />
-            <p>{{ t('index.application.product2') }}</p>
+            <p>{{ t("index.application.product2") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_medi.png" alt="" />
-            <p>{{ t('index.application.product3') }}</p>
+            <p>{{ t("index.application.product3") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_commication.png" alt="" />
-            <p>{{ t('index.application.product4') }}</p>
+            <p>{{ t("index.application.product4") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_vehicle.png" alt="" />
-            <p>{{ t('index.application.product5') }}</p>
+            <p>{{ t("index.application.product5") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_ic.png" alt="" />
-            <p>{{ t('index.application.product6') }}</p>
+            <p>{{ t("index.application.product6") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_computer.png" alt="" />
-            <p>{{ t('index.application.product7') }}</p>
+            <p>{{ t("index.application.product7") }}</p>
           </div>
           <div class="col-6 col-sm-3">
             <img src="/assets/img/index_application_pos.png" alt="" />
-            <p>{{ t('index.application.product8') }}</p>
+            <p>{{ t("index.application.product8") }}</p>
           </div>
         </div>
       </div>
