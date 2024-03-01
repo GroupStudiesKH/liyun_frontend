@@ -182,7 +182,9 @@ export default {
                   </p>
                 </div>
 
-                <div class="col-12 col-md-6 company_intro small_padding company_intro_left_border">
+                <div
+                  class="col-12 col-md-6 company_intro small_padding company_intro_left_border"
+                >
                   <h3 class="company_heading mt-3">
                     <span class="material-icons"> &#xE038; </span
                     >UL認證電子、電器專用之絕緣材料設計、製造
@@ -209,6 +211,92 @@ export default {
         </div>
       </div>
     </div>
+    <div class="gray-background company-deep-gray">
+      <div class="company-deep-gray-color-area"></div>
+      <div class="company-deep-gray-info-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 company_intro small_padding">
+              <h3 class="company_heading">RBA企業責任</h3>
+              <div class="row">
+                <div class="col-12">
+                  <p>
+                    責任商業聯盟行為準則 V6.0 Responsible Business Alliance Code
+                    of Conduct v6.0 責任商業聯盟 ( Responsible Business
+                    Alliance, 簡稱 RBA ) (前身為電子行業公民聯盟 ( Electronic
+                    Industry Citizenship Coalition, 簡稱 EICC )
+                    行為準則為電子行業或電子為主要
+                    組成部分的行業及其供應鏈制定一套規範,從而確保工作環境的安全工人受到尊重並付有尊嚴商業營運合乎環保性質
+                    並遵守道德操守,涵蓋的規範為:
+                  </p>
+                </div>
+
+                <div class="col-12 text-center">
+                  <img
+                    class="rba_img"
+                    src="/assets/img/about_rba.png"
+                    alt="RBA"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="gray-background">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 company_intro small_padding">
+              <h3 class="company_heading">【勞工政策】</h3>
+              <p>
+                俐元企業在入職前會進行「員工宣導」並明確宣示保護員工人權，
+                包含從基本的遵守法規要求、就業自由、人道待遇、禁止不當歧視與性騷擾，
+                並建立多元有效的溝通機制、健全薪資福利、提供多元的訓練發展機會，提倡就業自由，
+                所有的工作都是自願性的。
+                依據「勞動基準法」規定雇主不得僱用未滿15歲人員，
+                嚴禁雇用未滿法定最低就業年齡之童工，並確保未成年員工之身心健康與安全及禁止安排危險性或有害性的工作。
+                俐元企業勞工政策內，明定禁止使用童工，確保絕無雇用未滿法定最低就業年齡之童工，
+                並確保未成年員工之身心健康與安全，禁止安排危險性之工作。針對在職員工，會進行年度培訓，並於公司網站及內部信箱等宣導，
+                確保同仁能確實了解RBA政策內容與精神。
+              </p>
+
+              <h3 class="company_heading">【道德政策】</h3>
+              <p>
+                俐元企業於所有員工不得從事任何違法之商業行為，並應嚴守迴避利益衝突之原則，且禁止接受一切私人的佣金、回扣或其他顯然不相當之各種形式之利益。
+              </p>
+
+              <h3 class="company_heading">【環安衛政策】 </h3>
+              <p>
+                • 善用材料，節能減廢，降低污染對環境之衝擊。<br>
+                • 尊重生命，風險管控，降低危害對人員之衝擊，持續改善。<br>
+                • 符合法規，配合環安衛政策之推動。<br>
+                • 加強宣導，預防污染，落實管理系統之執行。<br>
+                • 貫徹訓練，安全視察，養成安全衛生環境之職場。<br>
+                • 全員參與，永續經營，達到環保、安全與經濟三贏之目標。<br>
+                俐元企業持續不斷的努力推行環境管理，營造健康舒適的工作環境。
+              </p>
+
+              <h3 class="company_heading">【無使用衝突礦產政策】</h3>
+              <p>
+                衝突礦產，是指錫 （Sn），鉭（Ta），鎢（W），金（Au） 來自於剛果民主共和國或鄰近國家衝
+                突區域之礦區。 由於該衝突區域被非政府武裝團體所控制，進行非法採礦且造成侵犯人權。俐元企業
+                承諾所有產品之來源沒有來自剛果及其周邊國家,以及這些國家內任何武裝力量控制區之衝突礦產。 並要求供應
+                商簽署「衝突礦產調查模板 ( CMRT ) 」、「衝突金屬來源調查表及不使用衝突金屬宣告書」、「供應商承包商RBA承諾書」進
+                行調查，原物料中禁止使用衝突礦產,以滿足來自客戶及法律法規的要求。
+              </p>
+
+              <h3 class="company_heading">【HSF政策】 </h3>
+              <p>
+                俐元企業推動綠色採購、保護地球、符合客戶及法律法規要求、持續改善。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
   </main>
   <Footer />
 </template>
