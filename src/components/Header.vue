@@ -18,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link class="nav-link" to="/">{{ t("header.companyIntro") }}</router-link>
+            <router-link class="nav-link" to="company">{{ t("header.companyIntro") }}</router-link>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/product">{{ t("header.product") }}</a>
