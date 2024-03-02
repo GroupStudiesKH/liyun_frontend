@@ -37,5 +37,81 @@
   },
   "product": {
     "addAskPrice": "Add to Inquiry List"
+  },
+  "company": {
+    "companyIntro": {
+      "title": "Company Introduction",
+      "phase1": "Established in 1987, Lyle Enterprise is a leading manufacturer of auxiliary/consumable materials design/manufacture, providing comprehensive composite material conductive/insulating solutions for the electronics/electrical and other major industries.",
+      "phase2": "Lyle Enterprise listens to customer needs, continuously innovates technology, and actively develops diversified conductive/insulating products, providing the most ideal conductive/insulating choices for the electronics communication/networking, industrial computer/POS, automotive electronics/vehicle-mounted, energy/battery, medical, semiconductor, and other major industries."
+    },
+    "companyPhliosophy": {
+      "title": "Business Philosophy",
+      "phase1": "In the rapidly advancing technological society and competitive environment, Lyle continually innovates technology, actively develops, and produces high-quality insulation materials, conductive fabrics, conductive fabric foam, foam, fireproof tapes, absorbing materials, and conductive copper foil...etc. Adding the latest technology production equipment to produce a series of precise specifications, ultra-high-quality, and easy-to-use products, establishing a good reputation in the industry."
+    },
+    "companyValue": {
+      "title": "Create Higher Added Value for Customers",
+      "phase1": "On the Lyle website, you can find the related products you need and accept customer commissions to design and manufacture products with special specifications and characteristics. Lyle has obtained ISO9001 certification, and the products comply with RoHS, REACH, and UL specifications. If you need special materials from abroad or have any questions, please feel free to contact us."
+    },
+    "companyProduct": {
+      "phase1": "Lyle Enterprise Co., Ltd. produces a series of precise specifications, high-quality products. And with the latest technology production equipment, we can accept customer commissions to design and manufacture products with special specifications and characteristics.",
+      "phase2": {
+        "title": "UL94VTM-0 Fireproof Tape",
+        "content": "Our company specializes in the production of special UL fireproof tapes, all of which are UL approved in the United States, resistant to solvents, and suitable for various electronic, electrical component partitions, and insulation uses, with a complete range of colors."
+      },
+      "phase3": {
+        "title": "Special Insulation Materials, Foaming Materials",
+        "content": "Our company's insulation materials and foaming materials are suitable for use in power supplies, disk drives, TV/monitors, PC boards, Notebook business machines for fitting, insulation, and EMI prevention."
+      },
+      "phase4": {
+        "title": "Conductive Materials, Conductive Fabrics, Conductive Copper (Aluminum) Foil",
+        "content": "Our company produces various metal conductive products, including copper foil, aluminum foil, alloy copper, etc. And we have conductive fabrics, conductive foam, conductive glue, with complete specifications and sizes."
+      },
+      "phase5": {
+        "title": "UL Certified Electronic, Electrical Insulation Material Design, Manufacturing",
+        "content": ""
+      },
+      "phase6": {
+        "title": "Copper (Aluminum) Foil Back Adhesive Processing, Manufacturing",
+        "content": ""
+      },
+      "phase7": {
+        "title": "ABSORBER Absorbing Material",
+        "content": "With the advent of the wireless high-frequency era, EMC and prevention of RF internal interference are the best countermeasure products."
+      },
+      "phase8": {
+        "title": "Metal Conductive Antenna, EMI, Nickel-plated Products",
+        "content": "Aluminum foil, copper foil, alloy copper, nickel sheet."
+      }
+    },
+    "rba": {
+      "title": "RBA Corporate Responsibility",
+      "content": "Responsible Business Alliance Code of Conduct V6.0 Responsible Business Alliance, formerly known as the Electronic Industry Citizenship Coalition (EICC), sets a set of norms for the electronics industry or industries with electronics as a major component and their supply chains to ensure the safety of the work environment, respect for workers, dignity, environmentally friendly business operations, and compliance with ethical standards. The norms covered include:"
+    },
+    "workerPolicy": {
+      "title": "Worker Policy",
+      "content": "Before joining, Lyle Enterprise conducts 'Employee Advocacy' to clearly demonstrate the protection of employee rights, including basic compliance with legal requirements, freedom of employment, humane treatment, prohibition of discrimination and harassment, and establishes diverse and effective communication mechanisms, sound salary and benefits, provide diverse training and development opportunities, promote freedom of employment, and all work is voluntary. According to the 'Labor Standards Law,' employers shall not employ personnel under the age of 15, strictly prohibit the employment of child labor below the statutory minimum employment age, ensure the physical and mental health and safety of underage workers, and prohibit the arrangement of hazardous or harmful work. Lyle Enterprise's labor policy stipulates the prohibition of child labor, ensures that no child labor below the statutory minimum employment age is employed, and ensures the physical and mental health and safety of underage workers, and prohibits the arrangement of hazardous work. For in-service employees, annual training will be conducted, and advocacy will be conducted through the company's website and internal mailbox to ensure that colleagues can fully understand the content and spirit of RBA policies."
+    },
+    "moralPolicy": {
+      "title": "Moral Policy",
+      "content": "Lyle Enterprise prohibits all employees from engaging in any illegal business activities, strictly adheres to the principle of avoiding conflicts of interest, and prohibits the acceptance of all private commissions, kickbacks, or any other obviously disproportionate forms of benefits."
+    },
+    "enviromentPolicy": {
+      "title": "Environment, Health and Safety Policy",
+      "phase1": "• Utilize materials, conserve energy, reduce waste, and minimize the environmental impact of pollution.",
+      "phase2": "• Respect life, risk control, reduce the impact of hazards on personnel, and continuously improve.",
+      "phase3": "• Comply with regulations and cooperate with the promotion of environment, health and safety policies.",
+      "phase4": "• Strengthen advocacy, prevent pollution, and implement management system execution.",
+      "phase5": "• Implement training, safety inspections, and cultivate a safe and healthy working environment.",
+      "phase6": "• All staff participate, sustainable operation, and achieve the goal of environmental protection, safety, and economic win-win.",
+      "phase7": "Lyle Enterprise continues to make continuous efforts to implement environmental management and create a healthy and comfortable working environment."
+    },
+    "moralMineral": {
+      "title": "No Conflict Minerals Policy",
+      "content": "Conflict minerals refer to tin (Sn), tantalum (Ta), tungsten (W), and gold (Au) from conflict areas in the Democratic Republic of the Congo or neighboring countries. As these conflict areas are controlled by non-governmental armed groups, illegal mining is conducted, resulting in human rights violations. Lyle Enterprise pledges that the source of all products does not come from the Congo and its neighboring countries, and any conflict minerals controlled by armed forces in these countries. Suppliers are required to conduct investigations through the 'Conflict Mineral Reporting Template (CMRT),' 'Conflict Metal Source Survey and Declaration of No Use of Conflict Metal,' and 'Supplier Contractor RBA Commitment' to ensure that conflict minerals are not used in raw materials to meet customer and legal requirements."
+    },
+    "hsf": {
+      "title": "HSF Policy",
+      "content": "Lyle Enterprise promotes green procurement, protects the earth, complies with customer and legal requirements, and continuously improves."
+    }
   }
 }
