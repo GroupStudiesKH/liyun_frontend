@@ -106,7 +106,7 @@ export default {
                             </div>
                         </div>
 
-                        <div class="col-12 pt-5 content" v-html="getInfo(product, 'content')">
+                        <div class="col-12 content" v-html="getInfo(product, 'content')">
                         </div>
                     </div>
                 </div>

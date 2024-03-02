@@ -554,6 +554,8 @@ main {
         }
 
         .content{
+            padding: 100px 20px;
+
             img{
                 width: auto;
                 height: auto;
@@ -561,18 +563,24 @@ main {
 
             table{
                 width: 100%;
+                border: 1px solid #000;
+                tr{
+                    td{
+                        border: 1px solid #000;
+                    }
+                }
             }
         }
 
         .askPrice{
-            margin-top: -40px;
             border-radius: 50px;
-            width: 180px;
+            width: auto;
             text-align: center;
             padding: 8px 20px;
             font-weight: 600;
             color: #fff;
             background-color: #d72118;
+            position: absolute;
 
             .material-icons{
                 font-size: 18pt;
@@ -674,6 +682,7 @@ main {
 
             .subtitle{
                 word-wrap: break-word;
+                white-space: break-spaces;
             }
             
             .feature_image{
