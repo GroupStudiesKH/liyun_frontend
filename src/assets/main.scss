@@ -540,7 +540,7 @@ main {
 
     }
 
-    &#product, &#company {
+    &#product, &#company, &#applied {
         .banner {
             margin: 0 auto;
             position: relative;
@@ -764,7 +764,7 @@ main {
             background-color: #fff;
             border-radius: 0 100px 0 0;
             padding: 0 20px 100px 100px;
-            margin: -100px 100px -70px 0;
+            margin: -75px 100px -70px 0;
             z-index: 99;
             box-shadow: 0px 20px 30px #e0e0e0;
 
