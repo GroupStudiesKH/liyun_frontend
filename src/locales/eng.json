@@ -1,9 +1,9 @@
 {
   "header": {
-    "companyIntro": "Company Introduction",
-    "product": "Product Introduction",
-    "applied": "Applied Industries",
-    "contact": "Contact Inquiry"
+    "companyIntro": "Company",
+    "product": "Product",
+    "applied": "Applications",
+    "contact": "Contact"
   },
   "footer": {
     "address": "No. 20-1, Sanlong Street, Shulin District, New Taipei City 238, Taiwan",

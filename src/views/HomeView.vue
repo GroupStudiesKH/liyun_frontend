@@ -145,7 +145,7 @@ export default {
             <p>
               {{ t("index.application.intro") }}
             </p>
-            <a href="#" class="pill_button"> Learn More </a>
+            <router-link to="applied" class="pill_button"> Learn More </router-link>
           </div>
         </div>
 
