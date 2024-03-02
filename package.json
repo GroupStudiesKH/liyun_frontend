@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && cp public/CNAME docs/ && cp docs/index.html docs/404.html",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "dev": "vite",
     "format": "prettier --write src/",
