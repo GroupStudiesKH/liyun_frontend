@@ -45,7 +45,7 @@ export default {
         const currentCategory = useRoute().query.category;
         const fetchCategories = async () => {
             try {
-                const results = await apiService.getAllCategory();
+                const results = await apiService.getAppliedCategory();
                 categories.value = results;
             } catch (error) {
                 console.log(error);

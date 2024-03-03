@@ -169,33 +169,25 @@ const getCategoryPath = async (id) => {
   }
 }
 
+const getAppliedCategory = async () => {
+  const requestConfig = scGet(`${apiUrl}applied/category/list`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+}
 
-//解除綁定LINE Notify
-// const unbindLineNotify = async () => {
-//   const requestConfig = scDelete(apiUrl + "api/LineNotifyAccessToken");
-//   try {
-//     const response = await axios(requestConfig);
-//     return checkServerResponse(response.data);
-//   } catch (error) {
-//     throw error;
-//   }
-// };
-
-
-//技能一鍵上下架
-// const setCertTradingStatus = async (certId, isEnable) => {
-//   const param = {
-//     CertId: certId,
-//     IsEnable: isEnable,
-//   };
-//   const requestConfig = scPut(apiUrl + "api/Certification/SetEnable", param);
-//   try {
-//     const response = await axios(requestConfig);
-//     return checkServerResponse(response.data);
-//   } catch (error) {
-//     throw error;
-//   }
-// };
+const getApplicationContent = async (params) => {
+  const requestConfig = scGet(`${apiUrl}applied?${objectToQueryString(params)}`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+};
 
 
 export default {
@@ -203,5 +195,7 @@ export default {
   getProduct,
   getAllCategory,
   getCategoryPath,
-  getBanner
+  getBanner,
+  getAppliedCategory,
+  getApplicationContent
 };

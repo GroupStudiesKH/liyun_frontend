@@ -669,6 +669,32 @@ main {
             }
         }
 
+        #applied_content{
+            .heading{
+                font-size: 24px;
+                color: #067db7;
+
+                &:nth-child(n+2){
+                    margin-top: 1.2em;
+                }
+            }
+
+            p{
+                font-size: 18px;
+                color: #696969;
+                line-height: 30px;
+            }
+
+            img{
+                width: 100%;
+                height: auto;
+            }
+
+            .col{
+                border-bottom: 2px dotted #ccc;
+            }
+        }
+
         .list{
             margin: 30px 0;
             padding: 0 0 0 50px;

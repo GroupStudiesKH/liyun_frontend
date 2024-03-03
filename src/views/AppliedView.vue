@@ -16,7 +16,7 @@ export default {
   setup() {
     const router = useRouter();
     const route = useRoute();
-    const products = ref([]);
+    const applicationList = ref([]);
     const catID = useRoute().params.categoryID;
     const categoryPath = ref([]);
     const totalPage = ref(0);
@@ -27,13 +27,13 @@ export default {
       category: "",
     });
 
-    const fetchProducts = async () => {
+    const fetchApplicationContent = async () => {
       try {
-        const results = await apiService.getProducts(params.value);
+        const results = await apiService.getApplicationContent(params.value);
         params.value.page = results.current_page;
         params.value.perPage = results.per_page;
         totalPage.value = results.last_page;
-        products.value = results.data;
+        applicationList.value = results.data;
       } catch (error) {
         console.log(error);
       }
@@ -75,7 +75,7 @@ export default {
 
     const changePage = async (newPage) => {
       params.value.page = newPage;
-      await fetchProducts();
+      await fetchApplicationContent();
     };
 
     onMounted(async () => {
@@ -84,11 +84,11 @@ export default {
         await getCategoryPath(catID);
       }
 
-      await fetchProducts();
+      await fetchApplicationContent();
     });
 
     return {
-      products,
+      applicationList,
       locale,
       totalPage,
       params,
@@ -112,13 +112,25 @@ export default {
       <div class="white-rounded-background">
         <div class="container">
           <div class="row">
-            <div class="row">
-              <AppliedMenu />
-              <div class="col-12 col-lg-10 list">
-                <div class="row">
-                  <div class="col-12 route">
-                    <span class="material-icons">&#xE88A;</span
-                    ><a href="/">首頁</a> / <a href="/applied">應用產業</a>
+            <AppliedMenu />
+            <div class="col-12 col-lg-10 list" id="applied_content">
+              <div class="row">
+                <div class="col-12 route">
+                  <span class="material-icons">&#xE88A;</span
+                  ><a href="/">首頁</a> / <a href="/applied">應用產業</a>
+                </div>
+                <div class="col-12">
+                  <div class="row">
+                    <div class="col-12 col" v-for="(applied, appliedIndex) in applicationList" :key="appliedIndex">
+                      <h3 class="heading">
+                        <span class="material-icons"> &#xE038; </span>
+                        {{ getTitle(applied) }}
+                      </h3>
+                      <p v-html="applied.get_content_attribute.find((attr) => {
+                            return attr.language == locale;
+                        }).meta_value">
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
