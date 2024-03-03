@@ -32,7 +32,12 @@ const router = createRouter({
       path: "/applied",
       name: "applied",
       component: () => import("../views/AppliedView.vue"),
-    }
+    },
+    {
+      path: "/applied/category/:categoryID",
+      name: "category-applied",
+      component: () => import("../views/AppliedView.vue"),
+    },
   ],
 });
 

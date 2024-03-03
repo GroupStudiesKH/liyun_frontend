@@ -41,7 +41,7 @@ export default {
 
     const getCategoryPath = async (categoryID) => {
       try {
-        const results = await apiService.getCategoryPath(categoryID);
+        const results = await apiService.getAppliedCategoryPath(categoryID);
         categoryPath.value = results;
       } catch (error) {
         console.log(error);
@@ -59,18 +59,6 @@ export default {
             (attr) => attr.language == locale.value
           ).meta_value
         : "No Title";
-    };
-
-    const getFeatureImage = (product) => {
-      return product.get_feature_image.find(
-        (attr) => attr.language == locale.value
-      ).meta_value != null &&
-        product.get_feature_image.find((attr) => attr.language == locale.value)
-          .meta_value != ""
-        ? product.get_feature_image.find(
-            (attr) => attr.language == locale.value
-          ).meta_value
-        : "/assets/img/product_image.png";
     };
 
     const changePage = async (newPage) => {
@@ -94,7 +82,6 @@ export default {
       params,
       changePage,
       getTitle,
-      getFeatureImage,
       categoryPath,
     };
   },
@@ -118,6 +105,13 @@ export default {
                 <div class="col-12 route">
                   <span class="material-icons">&#xE88A;</span
                   ><a href="/">首頁</a> / <a href="/applied">應用產業</a>
+                  <span v-if="params.category.length">
+                    <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
+                      / <router-link :to="`/product/category/${path.id}`">{{ path.get_title_attribute.find((attr) => {
+                                            return attr.language == locale;
+                                        }).meta_value }}</router-link> 
+                    </span>
+                  </span>
                 </div>
                 <div class="col-12">
                   <div class="row">

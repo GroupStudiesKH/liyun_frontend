@@ -179,6 +179,16 @@ const getAppliedCategory = async () => {
   }
 }
 
+const getAppliedCategoryPath = async (id) => {
+  const requestConfig = scGet(`${apiUrl}applied/category/path/${id}`);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+}
+
 const getApplicationContent = async (params) => {
   const requestConfig = scGet(`${apiUrl}applied?${objectToQueryString(params)}`);
   try {
@@ -197,5 +207,6 @@ export default {
   getCategoryPath,
   getBanner,
   getAppliedCategory,
-  getApplicationContent
+  getApplicationContent,
+  getAppliedCategoryPath
 };
