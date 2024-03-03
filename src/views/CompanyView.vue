@@ -70,7 +70,7 @@ export default {
         ? product.get_feature_image.find(
             (attr) => attr.language == locale.value
           ).meta_value
-        : "/assets/img/product_image.png";
+        : "/assets/img/product_image.png?t=202403031739";
     };
 
     const changePage = async (newPage) => {
