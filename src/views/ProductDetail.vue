@@ -101,7 +101,7 @@ export default {
                         <div class="col-4">
                         </div>
                         <div class="col-8">
-                            <div class="askPrice">
+                            <div class="askPrice" role="button">
                                 {{ $t("product.addAskPrice") }}
                                 <span class="material-icons">&#xEA20;</span>
                             </div>
