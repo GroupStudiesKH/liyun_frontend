@@ -592,7 +592,7 @@ main {
             }
         }
 
-        #productMenu{
+        #productMenu, #appliedMenu{
             .title{
                 a{
                     color: #fff !important;
@@ -601,14 +601,14 @@ main {
         }
 
         @media screen and (min-width: 991px){
-            #productMenu{
+            #productMenu, #appliedMenu{
                 display: block !important;
                 height: auto !important;
                 padding-bottom: 0;
                 overflow: visible !important;
             }
 
-            #productMenuBtn{
+            #productMenuBtn, #appliedMenuBtn{
                 display: none;
             }
         }
