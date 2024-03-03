@@ -118,7 +118,9 @@ export default {
                 </div>
               </div>
               <div class="row">
-                <div class="col-6 col-lg-3" v-for="(product, productIndex) in products" v-key="productIndex">
+                <div class="col-6 col-lg-3" v-for="(product, productIndex) in products.filter(p => {
+                  return getTitle(p) != 'No Title'
+                })" :key="productIndex">
                   <router-link :to="`/product/${product.id}`">
                     <div class="feature_image">
                       <div class="img" :style="`background-image: url('${getFeatureImage(product)}')`">
