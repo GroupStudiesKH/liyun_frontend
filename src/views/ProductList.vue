@@ -107,7 +107,8 @@ export default {
             <div class="col-12 col-lg-10 list">
               <div class="row">
                 <div class="col-12 route">
-                  <span class="material-icons">&#xE88A;</span><a href="/">首頁</a> / <a href="/product">產品介紹</a> 
+                  <span class="material-icons">&#xE88A;</span>
+                  <router-link :to="{name: 'home'}">{{ $t('header.index') }}</router-link> / <a href="/product">{{ $t('header.product') }}</a> 
                   <span v-if="params.category.length">
                     <span v-for="(path, pathIndex) in categoryPath" :key="pathIndex">
                       / <router-link :to="`/product/category/${path.id}`">{{ path.get_title_attribute.find((attr) => {

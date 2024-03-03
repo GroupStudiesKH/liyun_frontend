@@ -30,26 +30,13 @@
                         </a>
 
                         
-                        <a v-else :href="`/product/category/${childCategory2nd.id}`">
+                        <a :href="`/product/category/${childCategory2nd.id}`">
                             {{ childCategory2nd.get_title_attribute.find((attr) => {
                                 return attr.language == locale;
                             }).meta_value }}
                         </a>
 
-                    
-
-                        <div v-if="
-                            childCategory2nd.children.length && 
-                            (currentCategory == childCategory2nd.id || childCategory2nd.children.find((child) => child.id == currentCategory))
-                        " class="collapse secondMenu show" :id="`secondMenu_${childCategory2ndIndex}`">
-                            <ul>
-                                <li v-for="(childCategory3rd, childCategory3rdIndex) in childCategory2nd.children" :key="childCategory3rdIndex">
-                                    <router-link :to="`/product/category/${childCategory3rd.id}`">{{childCategory3rd.get_title_attribute.find((attr) => {
-                                            return attr.language == locale;
-                                        }).meta_value}}</router-link>
-                                </li>
-                            </ul>
-                        </div>
+                
 
                     </li>
 

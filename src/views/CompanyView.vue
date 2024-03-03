@@ -115,8 +115,8 @@ export default {
             <div class="col-12 list">
               <div class="row">
                 <div class="col-12 route">
-                  <span class="material-icons">&#xE88A;</span
-                  ><a href="/">首頁</a> / <a href="/company">公司介紹</a>
+                  <span class="material-icons">&#xE88A;</span>
+                  <router-link :to="{name: 'home'}">{{ $t('header.index') }}</router-link> / <router-link :to="{name: 'company'}">{{ $t('header.companyIntro') }}</router-link>
                 </div>
               </div>
               <div class="row">
