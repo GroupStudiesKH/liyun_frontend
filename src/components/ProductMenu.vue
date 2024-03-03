@@ -6,7 +6,13 @@
             開啟分類選單
         </a>
         <div class="collapse col-12 category" id="productMenu">
-            <div v-for="(category, categoryIndex) in categories" :key="categoryIndex">
+            <div v-for="(category, categoryIndex) in categories.filter(
+                c => {
+                    return c.get_title_attribute.find((attr) => {
+                        return attr.language == locale;
+                    }).meta_value != null
+                }
+            )" :key="categoryIndex">
                 <div class="title">
                     <router-link :to="`/product/category/${category.id}`">
                         {{ category.get_title_attribute.find((attr) => {

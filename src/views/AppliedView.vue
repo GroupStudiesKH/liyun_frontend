@@ -115,7 +115,9 @@ export default {
                 </div>
                 <div class="col-12">
                   <div class="row">
-                    <div class="col-12 col" v-for="(applied, appliedIndex) in applicationList" :key="appliedIndex">
+                    <div class="col-12 col" :class="appliedIndex > 0 ? `mt-5` : ``" v-for="(applied, appliedIndex) in applicationList.filter(a => {
+                      return getTitle(a) != 'No Title'
+                    })" :key="appliedIndex">
                       <h3 class="heading">
                         <span class="material-icons"> &#xE038; </span>
                         {{ getTitle(applied) }}

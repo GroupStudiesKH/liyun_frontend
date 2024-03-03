@@ -11,7 +11,11 @@
                     應用產業
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" v-for="(category, categoryIndex) in categories" :key="categoryIndex">
+                    <li class="list-group-item" v-for="(category, categoryIndex) in categories.filter(c => {
+                        return c.get_title_attribute.find((attr) => {
+                            return attr.language == locale;
+                        }).meta_value != null
+                    })" :key="categoryIndex">
                         <a  :href="`/applied/category/${category.id}`">
                             {{ category.get_title_attribute.find((attr) => {
                                 return attr.language == locale;

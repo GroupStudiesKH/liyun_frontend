@@ -71,7 +71,7 @@ export default {
             <img src="/assets/img/product_banner.png" alt="" />
         </div>
 
-        <div class="container">
+        <div class="container mb-5">
             <div class="row">
                 <ProductMenu />
                 <div class="col-12 col-lg-10 list">
