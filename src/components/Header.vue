@@ -27,7 +27,7 @@
             <a class="nav-link" href="/applied">{{ t("header.applied") }}</a>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="#">{{ t("header.contact") }}</router-link>
+            <router-link class="nav-link" :to="{name: 'contact'}">{{ t("header.contact") }}</router-link>
           </li>
           <li class="nav-item language_switch dropdown">
             <div

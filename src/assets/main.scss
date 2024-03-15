@@ -541,7 +541,7 @@ main {
 
     }
 
-    &#product, &#company, &#applied {
+    &#product, &#company, &#applied, &#contact {
         .banner {
             margin: 0 auto;
             position: relative;
@@ -692,6 +692,47 @@ main {
 
             .col{
                 border-bottom: 2px dotted #ccc;
+            }
+        }
+
+        #contact_content{
+            .heading{
+                border-left: 5px solid #067db7;
+                margin-left: 20px;
+            }
+
+            .secondHeading{
+                border-left: 5px solid #4cc8f4;
+                margin-left: 20px;
+            }
+
+            input.form-control, textarea.form-control{
+                background-color: #f3f3f3;
+                border: none;
+            }
+
+            label{
+                transform: translateY(120%) translateX(20%);
+            }
+
+            .required{
+                label{
+                    &::after{
+                        content: '*';
+                        color: red;
+                    }
+                }
+            }
+
+            .askPriceContent{
+                background-color: #f3f3f3;
+                width: 96%;
+                margin: 0 auto;
+                border-radius: 5px;
+                padding: 5px;
+                .category{
+                    color: #999;
+                }
             }
         }
 
