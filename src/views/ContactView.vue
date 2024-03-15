@@ -21,12 +21,22 @@ export default {
     const categoryPath = ref([]);
     const totalPage = ref(0);
     const { locale } = useI18n();
+    const contact_name = ref("");
+    const contact_company = ref("");
+    const contact_phone = ref("");
+    const contact_email = ref("");
+    const contact_content = ref("");
 
     onMounted(async () => {
     });
 
     return {
-      locale,
+        locale,
+        contact_name,
+        contact_company,
+        contact_phone,
+        contact_email,
+        contact_content,
     };
   },
 };
@@ -50,52 +60,50 @@ export default {
                   <router-link :to="{name: 'home'}">{{ $t('header.index') }}</router-link> / <router-link :to="{name: 'contact'}">{{ $t('header.contact') }}</router-link>
                 </div>
                 <div class="col-12">
-                    <div class="px-5">
+                    <div class="contact-container">
                         <div class="row">
-                            <div class="col-12 heading">
-                                親愛的顧客您好，若您有任何需求或興趣，我們誠摯地邀請您填寫以下表單，<br>
-                                或撥打服務專線 :+8862-8688-8680 我們將盡力為您解答!
+                            <div class="col-12 heading" v-html="$t('contact.heading')">
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-6 required">
-                                <label for="contact_name">姓名</label>
-                                <input type="text" id="contact_name" name="contact_name" class="form-control">
+                        <div class="row">
+                            <div class="col-sm-6 col-12 required" :class="contact_name.length > 0 ? `hasContent` : ``">
+                                <label for="contact_name">{{ contact_name.length == 0 ? $t('contact.name') : `` }}</label>
+                                <input type="text" id="contact_name" name="contact_name" v-model="contact_name" class="form-control">
                             </div>
 
-                            <div class="col-6 required">
-                                <label for="contact_company">公司/單位</label>
-                                <input type="text" class="form-control" id="contact_company" name="contact_company">
+                            <div class="col-sm-6 col-12 required" :class="contact_company.length > 0 ? `hasContent` : ``">
+                                <label for="contact_company">{{ contact_company.length == 0 ? $t('contact.company') : `` }}</label>
+                                <input type="text" class="form-control" id="contact_company" v-model="contact_company" name="contact_company">
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-6 required">
-                                <label for="contact_phone">聯絡電話</label>
-                                <input type="text" class="form-control" id="contact_phone" name="contact_phone">
+                        <div class="row">
+                            <div class="col-sm-6 col-12 required" :class="contact_phone.length > 0 ? `hasContent` : ``">
+                                <label for="contact_phone">{{ contact_phone.length == 0 ? $t('contact.phone') : `` }}</label>
+                                <input type="text" class="form-control" id="contact_phone" v-model="contact_phone" name="contact_phone">
                             </div>
-                            <div class="col-6 required">
-                                <label for="contact_email">E-mail</label>
-                                <input type="text" class="form-control" id="contact_email" name="contact_email">
+                            <div class="col-sm-6 col-12 required" :class="contact_email.length > 0 ? `hasContent` : ``">
+                                <label for="contact_email">{{ contact_email.length == 0 ? $t('contact.email') : `` }}</label>
+                                <input type="email" class="form-control" id="contact_email" v-model="contact_email" name="contact_email">
                             </div>
                         </div>
 
-                        <div class="row mt-3">
+                        <div class="row">
                             <div class="col-12">
-                                <label for="contact_content">訊息內容</label>
-                                <textarea class="form-control" id="contact_content" name="contact_content"></textarea>
+                                <label for="contact_content">{{ contact_content.length == 0 ? $t('contact.content') : `` }}</label>
+                                <textarea class="form-control" id="contact_content" name="contact_content" v-model="contact_content"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     
-                    <div class="px-5">
+                    <div class="contact-container">
                         <hr/>
                         <div class="row mt-3">
                             <div class="col-12 secondHeading">
-                                您的詢價產品:
+                                {{ $t('contact.askingPrice') }}
                             </div>
                         </div>
                         <div class="row mt-3">
@@ -106,7 +114,7 @@ export default {
                         <hr/>
                         <div class="row mt-3">
                             <div class="col-12">
-                                <button class="btn btn-danger">確認送出</button>
+                                <button class="btn btn-danger">{{ $t('contact.submit') }}</button>
                             </div>
                         </div>
                     </div>

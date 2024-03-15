@@ -696,44 +696,67 @@ main {
         }
 
         #contact_content{
-            .heading{
-                border-left: 5px solid #067db7;
-                margin-left: 20px;
-            }
 
-            .secondHeading{
-                border-left: 5px solid #4cc8f4;
-                margin-left: 20px;
-            }
+            .contact-container{
+                padding: 0 30px;
+                @media (max-width: 991px) {
+                    padding: 0 10px;
 
-            input.form-control, textarea.form-control{
-                background-color: #f3f3f3;
-                border: none;
-            }
+                    .heading, .secondHeading{
+                        margin-left: 10px !important;
+                    }
 
-            label{
-                transform: translateY(120%) translateX(20%);
-            }
+                }
 
-            .required{
+                .heading{
+                    border-left: 5px solid #067db7;
+                    margin-left: 20px;
+                }
+    
+                .secondHeading{
+                    border-left: 5px solid #4cc8f4;
+                    margin-left: 20px;
+                }
+    
+                input.form-control, textarea.form-control{
+                    background-color: #f3f3f3;
+                    border: none;
+                }
+    
                 label{
-                    &::after{
-                        content: '*';
-                        color: red;
+                    transform: translateY(120%) translateX(10px);
+                }
+    
+                .required{
+                    label{
+                        &::after{
+                            content: '*';
+                            color: red;
+                        }
+                    }
+    
+                    &.hasContent{
+                        label{
+                            &::after{
+                                content: '';
+                            }
+                        }
+                    }
+                }
+    
+                .askPriceContent{
+                    background-color: #f3f3f3;
+                    width: 96%;
+                    margin: 0 auto;
+                    border-radius: 5px;
+                    padding: 5px;
+                    .category{
+                        color: #999;
                     }
                 }
             }
+            
 
-            .askPriceContent{
-                background-color: #f3f3f3;
-                width: 96%;
-                margin: 0 auto;
-                border-radius: 5px;
-                padding: 5px;
-                .category{
-                    color: #999;
-                }
-            }
         }
 
         .list{

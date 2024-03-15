@@ -114,5 +114,16 @@
       "title": "HSF Policy",
       "content": "Lyle Enterprise promotes green procurement, protects the earth, complies with customer and legal requirements, and continuously improves."
     }
+  },
+  "contact": {
+    "heading": "Dear customer, if you have any needs or interests, we sincerely invite you to fill out the following form,<br>or call our service hotline: +8862-8688-8680. We will do our best to assist you!",
+    "title": "Contact Inquiry",
+    "name": "Name",
+    "company": "Company/Organization",
+    "phone": "Phone",
+    "email": "E-mail",
+    "content": "Message Content",
+    "askingPrice": "Product for Inquiry",
+    "submit": "Submit"
   }
 }
