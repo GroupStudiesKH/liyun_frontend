@@ -45,13 +45,31 @@ export default {
       await recaptchaLoaded();
       const token = await executeRecaptcha("submit");
 
+      let cartProducts = [];
+      for (let i in cartItem.value) {
+        let title = cartItem.value[i].product.product_detail.find((attr) => {
+          return attr.language == locale.value && attr.meta_key == "title";
+        }).meta_value ?? ``;
+        let category =
+          cartItem.value[i].category.length > 0
+            ? cartItem.value[i].category[0].get_title_attribute.find((attr) => {
+                return attr.language == locale.value;
+              }).meta_value
+            : ``;
+        cartProducts.push({
+          title: title,
+          category: category,
+          id: cartItem.value[i].product.id,
+        });
+      }
+
       const results = await apiService.sendContact({
         contact_name: contact_name.value,
         contact_company: contact_company.value,
         contact_phone: contact_phone.value,
         contact_email: contact_email.value,
         contact_content: contact_content.value,
-        //   cart: cartItem.value,
+        cart: JSON.stringify(cartProducts),
         recaptcha_token: token,
       });
 
@@ -94,7 +112,7 @@ export default {
       submitContact,
       errorMsg,
       isModalOpen,
-      goHome
+      goHome,
     };
   },
 };
@@ -274,7 +292,7 @@ export default {
                                       attr.language == locale &&
                                       attr.meta_key == "title"
                                     );
-                                  }).meta_value
+                                  }).meta_value ?? ``
                                 }}
                               </router-link>
                             </div>
@@ -309,7 +327,7 @@ export default {
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title">{{ $t('contact.successTitle') }}</h5>
+          <h5 class="modal-title">{{ $t("contact.successTitle") }}</h5>
           <button
             type="button"
             class="btn-close"
@@ -317,15 +335,11 @@ export default {
           ></button>
         </div>
         <div class="modal-body">
-          <p>{{ $t('contact.success') }}</p>
+          <p>{{ $t("contact.success") }}</p>
         </div>
         <div class="modal-footer">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="goHome()"
-          >
-          {{ $t('contact.close') }}
+          <button type="button" class="btn btn-secondary" @click="goHome()">
+            {{ $t("contact.close") }}
           </button>
         </div>
       </div>
