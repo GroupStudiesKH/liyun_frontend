@@ -5,6 +5,7 @@ import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import ProductMenu from "@/components/ProductMenu.vue";
 import apiService from "@/service/api-service.js";
+import cartService from "@/service/cart-service.js";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -49,6 +50,9 @@ export default {
       defaultVal;
     };
 
+    const addCartItem = () => {
+      cartService.addCart({product: product.value, category: categoryPath.value});
+    }
 
     onMounted(async () => {
       await fetchProduct();
@@ -58,7 +62,8 @@ export default {
       product,
       getInfo,
       categoryPath,
-      locale
+      locale,
+      addCartItem
     };
   },
 };
@@ -101,7 +106,7 @@ export default {
                         <div class="col-4">
                         </div>
                         <div class="col-8">
-                            <div class="askPrice" role="button">
+                            <div class="askPrice" role="button" @click="addCartItem()">
                                 {{ $t("product.addAskPrice") }}
                                 <span class="material-icons">&#xEA20;</span>
                             </div>
