@@ -24,6 +24,7 @@ export default {
     const contact_email = ref("");
     const contact_content = ref("");
     const cartItem = ref([]);
+    const isSending = ref(false);
     const isModalOpen = ref(false);
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
     const removeCartItem = async (productID) => {
@@ -42,6 +43,7 @@ export default {
     };
 
     const submitContact = async () => {
+      isSending.value = true;
       await recaptchaLoaded();
       const token = await executeRecaptcha("submit");
 
@@ -86,6 +88,8 @@ export default {
         }
       }
 
+      isSending.value = false;
+
       if (results.hasOwnProperty("success")) {
         isModalOpen.value = true;
       }
@@ -113,6 +117,7 @@ export default {
       errorMsg,
       isModalOpen,
       goHome,
+      isSending
     };
   },
 };
@@ -308,8 +313,11 @@ export default {
                       <hr />
                       <div class="row mt-3">
                         <div class="col-12">
-                          <div class="btn btn-danger" @click="submitContact()">
+                          <div class="btn btn-danger" @click="submitContact()" v-if="!isSending">
                             {{ $t("contact.submit") }}
+                          </div>
+                          <div class="btn btn-secondary" v-else>
+                            {{ $t("contact.isSending") }}
                           </div>
                         </div>
                       </div>
@@ -331,7 +339,7 @@ export default {
           <button
             type="button"
             class="btn-close"
-            @click="isModalOpen = false"
+            @click="goHome()"
           ></button>
         </div>
         <div class="modal-body">
