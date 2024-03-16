@@ -2,8 +2,8 @@ import axios from "axios";
 
 // let devEnv = ["beta.7cplay.com", "7cplay.com", "webproxy.7cplay.com"].indexOf(location.hostname) == -1 ? true : false;
 // let apiUrl = devEnv ? "https://apinew.7cplay.com/" : "https://apinew.7cplay.com/";
-let apiUrl = "https://admin.liyun.hanyuan.info/api/";
-// let apiUrl = "http://localhost:8000/api/";
+// let apiUrl = "https://admin.liyun.hanyuan.info/api/";
+let apiUrl = "http://localhost:8000/api/";
 
 //Cookie ExpireDate
 let expire = new Date();
@@ -199,6 +199,16 @@ const getApplicationContent = async (params) => {
   }
 };
 
+const sendContact = async (params) => {
+  const requestConfig = scPost(`${apiUrl}contact`, params);
+  try {
+    const response = await axios(requestConfig);
+    return checkServerResponse(response);
+  } catch (error) {
+    throw error;
+  }
+}
+
 
 export default {
   getProducts,
@@ -208,5 +218,6 @@ export default {
   getBanner,
   getAppliedCategory,
   getApplicationContent,
-  getAppliedCategoryPath
+  getAppliedCategoryPath,
+  sendContact
 };
