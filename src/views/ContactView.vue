@@ -4,7 +4,7 @@ import { useRouter, useRoute } from "vue-router";
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import AppliedMenu from "@/components/AppliedMenu.vue";
-import apiService from "@/service/api-service.js";
+import cartService from "@/service/cart-service.js";
 import { useI18n } from "vue-i18n";
 
 export default {
@@ -14,20 +14,25 @@ export default {
     AppliedMenu,
   },
   setup() {
-    const router = useRouter();
-    const route = useRoute();
-    const applicationList = ref([]);
-    const catID = useRoute().params.categoryID;
-    const categoryPath = ref([]);
-    const totalPage = ref(0);
     const { locale } = useI18n();
     const contact_name = ref("");
     const contact_company = ref("");
     const contact_phone = ref("");
     const contact_email = ref("");
     const contact_content = ref("");
+    const cartItem = ref([])
+    const removeCartItem = async (productID) => {
+      await cartService.removeCart(productID);
+      cartItem.value = cartService.getCart();
+    }
 
-    onMounted(async () => {
+    const getCart = () => {
+      cartItem.value = cartService.getCart();
+    }
+
+
+    onMounted(() => {
+        getCart()
     });
 
     return {
@@ -37,6 +42,8 @@ export default {
         contact_phone,
         contact_email,
         contact_content,
+        removeCartItem,
+        cartItem
     };
   },
 };
@@ -107,8 +114,28 @@ export default {
                             </div>
                         </div>
                         <div class="row mt-3">
-                            <div class="col-12 askPriceContent">
-                                ・<span class="category">緩衝材料UL防火泡棉</span><span class="product"> > 電子架橋泡棉</span>
+                            <div class="col-12 askPriceContent" v-for="(cart, cartIndex) in cartItem" :key="cartIndex">
+                                <div class="row">
+                                    <div class="col-10">
+                                        ・<span class="category">
+                                            {{ 
+                                                cart.category.length > 0 ? 
+                                                cart.category[0].get_title_attribute.find((attr) => {
+                                                    return attr.language == locale;
+                                                }).meta_value : ``
+                                                
+                                            }}
+                                        </span>
+                                        <span class="product"> > 
+                                            {{ cart.product.product_detail.find((attr) => {
+                                                return attr.language == locale && attr.meta_key == 'title';
+                                            }).meta_value }}
+                                        </span>
+                                    </div>
+                                    <div class="col-2 remove" @click="removeCartItem(cart.product.id)">
+                                        <div>X</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <hr/>
