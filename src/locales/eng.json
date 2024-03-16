@@ -125,6 +125,9 @@
     "email": "E-mail",
     "content": "Message Content",
     "askingPrice": "Product for Inquiry",
-    "submit": "Submit"
+    "submit": "Submit",
+    "success": "Your message has been successfully sent. We will contact you as soon as possible. Thank you!",
+    "successTitle": "Message Sent Successfully",
+    "close": "close"
   }
 }

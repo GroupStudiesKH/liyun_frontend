@@ -16,6 +16,7 @@ export default {
     AppliedMenu,
   },
   setup() {
+    const router = useRouter();
     const { locale } = useI18n();
     const contact_name = ref("");
     const contact_company = ref("");
@@ -23,31 +24,58 @@ export default {
     const contact_email = ref("");
     const contact_content = ref("");
     const cartItem = ref([]);
+    const isModalOpen = ref(false);
     const { executeRecaptcha, recaptchaLoaded } = useReCaptcha();
     const removeCartItem = async (productID) => {
       await cartService.removeCart(productID);
       cartItem.value = cartService.getCart();
     };
+    const errorMsg = ref({
+      contact_name: false,
+      contact_company: false,
+      contact_phone: false,
+      contact_email: false,
+    });
 
     const getCart = () => {
       cartItem.value = cartService.getCart();
     };
 
     const submitContact = async () => {
-        await recaptchaLoaded()
-        const token = await executeRecaptcha("submit");
+      await recaptchaLoaded();
+      const token = await executeRecaptcha("submit");
 
-        const results = await apiService.sendContact({
-          contact_name: contact_name.value,
-          contact_company: contact_company.value,
-          contact_phone: contact_phone.value,
-          contact_email: contact_email.value,
-          contact_content: contact_content.value,
+      const results = await apiService.sendContact({
+        contact_name: contact_name.value,
+        contact_company: contact_company.value,
+        contact_phone: contact_phone.value,
+        contact_email: contact_email.value,
+        contact_content: contact_content.value,
         //   cart: cartItem.value,
-          recaptcha_token: token
-        });
+        recaptcha_token: token,
+      });
 
-        // console.log("Token: ", token);
+      errorMsg.value = {
+        contact_name: false,
+        contact_company: false,
+        contact_phone: false,
+        contact_email: false,
+      };
+
+      if (results.hasOwnProperty("errors")) {
+        for (let i in results.errors) {
+          errorMsg.value[i] = true;
+        }
+      }
+
+      if (results.hasOwnProperty("success")) {
+        isModalOpen.value = true;
+      }
+    };
+
+    // go to Home page
+    const goHome = () => {
+      router.push({ name: "home" });
     };
 
     onMounted(() => {
@@ -63,7 +91,10 @@ export default {
       contact_content,
       removeCartItem,
       cartItem,
-      submitContact
+      submitContact,
+      errorMsg,
+      isModalOpen,
+      goHome
     };
   },
 };
@@ -116,6 +147,7 @@ export default {
                             name="contact_name"
                             v-model="contact_name"
                             class="form-control"
+                            :class="errorMsg.contact_name ? `error` : ``"
                           />
                         </div>
 
@@ -136,6 +168,7 @@ export default {
                             id="contact_company"
                             v-model="contact_company"
                             name="contact_company"
+                            :class="errorMsg.contact_company ? `error` : ``"
                           />
                         </div>
                       </div>
@@ -154,6 +187,7 @@ export default {
                             id="contact_phone"
                             v-model="contact_phone"
                             name="contact_phone"
+                            :class="errorMsg.contact_phone ? `error` : ``"
                           />
                         </div>
                         <div
@@ -169,6 +203,7 @@ export default {
                             id="contact_email"
                             v-model="contact_email"
                             name="contact_email"
+                            :class="errorMsg.contact_email ? `error` : ``"
                           />
                         </div>
                       </div>
@@ -206,10 +241,15 @@ export default {
                         >
                           <div class="row">
                             <div class="col-10">
-                              ・<router-link :to="{
-                                    name: 'category-product',
-                                    params: { categoryID: cart.product.category_id }
-                              }" class="category">
+                              ・<router-link
+                                :to="{
+                                  name: 'category-product',
+                                  params: {
+                                    categoryID: cart.product.category_id,
+                                  },
+                                }"
+                                class="category"
+                              >
                                 {{
                                   cart.category.length > 0
                                     ? cart.category[0].get_title_attribute.find(
@@ -220,10 +260,13 @@ export default {
                                     : ``
                                 }}
                               </router-link>
-                              <router-link class="product" :to="{
-                                    name: 'product-detail',
-                                    params: { id: cart.product.id }
-                              }">
+                              <router-link
+                                class="product"
+                                :to="{
+                                  name: 'product-detail',
+                                  params: { id: cart.product.id },
+                                }"
+                              >
                                 >
                                 {{
                                   cart.product.product_detail.find((attr) => {
@@ -262,5 +305,31 @@ export default {
       </div>
     </div>
   </main>
+  <div v-if="isModalOpen" class="modal" style="display: block">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">{{ $t('contact.successTitle') }}</h5>
+          <button
+            type="button"
+            class="btn-close"
+            @click="isModalOpen = false"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p>{{ $t('contact.success') }}</p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="goHome()"
+          >
+          {{ $t('contact.close') }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
   <Footer />
 </template>
