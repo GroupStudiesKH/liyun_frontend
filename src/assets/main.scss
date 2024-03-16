@@ -587,6 +587,10 @@ main {
                 vertical-align: top;
             }
 
+            &.remove{
+                background-color: #2bd718;
+            }
+
             @media screen and (max-width: 991px){
                 margin-top: 0px;
             }

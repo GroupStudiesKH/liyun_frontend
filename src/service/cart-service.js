@@ -11,8 +11,24 @@ const getCart = () => {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
+const checkItemExist = (productID) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let index = cart.findIndex((item) => item.product.id == productID);
+    return index !== -1;
+}
+
+const removeCart = (productID) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let index = cart.findIndex((item) => item.product.id == productID);
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 export default {
     addCart,
-    getCart
+    getCart,
+    removeCart,
+    checkItemExist
 };

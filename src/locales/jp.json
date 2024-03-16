@@ -37,7 +37,8 @@
         }
     },
     "product": {
-        "addAskPrice": "見積もりリストに追加"
+        "addAskPrice": "見積もりリストに追加",
+        "removeAskPrice": "見積もりリストから削除"
     },
     "company": {
         "companyIntro": {

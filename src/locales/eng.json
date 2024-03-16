@@ -37,7 +37,8 @@
     }
   },
   "product": {
-    "addAskPrice": "Add to Inquiry List"
+    "addAskPrice": "Add to Inquiry List",
+    "removeAskPrice": "Remove from Inquiry List"
   },
   "company": {
     "companyIntro": {

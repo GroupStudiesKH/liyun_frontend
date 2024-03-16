@@ -18,6 +18,7 @@ export default {
     const router = useRouter();
     const product = ref([]);
     const productID = useRoute().params.id;
+    const checkCart = ref(false);
     const categoryPath = ref([])
     const { locale } = useI18n();
 
@@ -52,10 +53,17 @@ export default {
 
     const addCartItem = () => {
       cartService.addCart({product: product.value, category: categoryPath.value});
+      checkCart.value = true;
+    }
+
+    const removeCartItem = () => {
+      cartService.removeCart(productID);
+      checkCart.value = false;
     }
 
     onMounted(async () => {
       await fetchProduct();
+      checkCart.value = cartService.checkItemExist(productID);
     });
 
     return {
@@ -63,7 +71,9 @@ export default {
       getInfo,
       categoryPath,
       locale,
-      addCartItem
+      addCartItem,
+      removeCartItem,
+      checkCart
     };
   },
 };
@@ -106,8 +116,13 @@ export default {
                         <div class="col-4">
                         </div>
                         <div class="col-8">
-                            <div class="askPrice" role="button" @click="addCartItem()">
+                            <div class="askPrice" role="button" @click="addCartItem()" v-if="!checkCart">
                                 {{ $t("product.addAskPrice") }}
+                                <span class="material-icons">&#xEA20;</span>
+                            </div>
+
+                            <div class="askPrice remove" role="button" @click="removeCartItem()" v-else>
+                                {{ $t("product.removeAskPrice") }}
                                 <span class="material-icons">&#xEA20;</span>
                             </div>
                         </div>
