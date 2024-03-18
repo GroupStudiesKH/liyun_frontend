@@ -129,6 +129,7 @@
     "success": "Your message has been successfully sent. We will contact you as soon as possible. Thank you!",
     "successTitle": "Message Sent Successfully",
     "close": "close",
-    "isSending": "Sending"
+    "isSending": "Sending",
+    "askingPriceEmpty": "You can find the product you want to inquire about on the product introduction page and contact us by adding it to the inquiry form."
   }
 }

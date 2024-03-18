@@ -242,6 +242,7 @@ export default {
                             class="form-control"
                             id="contact_content"
                             name="contact_content"
+                            rows="15"
                             v-model="contact_content"
                           ></textarea>
                         </div>
@@ -256,7 +257,7 @@ export default {
                           {{ $t("contact.askingPrice") }}
                         </div>
                       </div>
-                      <div class="row mt-3">
+                      <div class="row mt-3" v-if="cartItem.length">
                         <div
                           class="col-12 askPriceContent"
                           v-for="(cart, cartIndex) in cartItem"
@@ -308,6 +309,11 @@ export default {
                               <div>X</div>
                             </div>
                           </div>
+                        </div>
+                      </div>
+                      <div class="row mt-3" v-else>
+                        <div class="col-12 askPriceContent">
+                          {{ $t("contact.askingPriceEmpty") }}
                         </div>
                       </div>
                       <hr />
