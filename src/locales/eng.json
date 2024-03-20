@@ -86,34 +86,34 @@
       }
     },
     "rba": {
-      "title": "RBA Corporate Responsibility",
-      "content": "Responsible Business Alliance Code of Conduct V6.0 Responsible Business Alliance, formerly known as the Electronic Industry Citizenship Coalition (EICC), sets a set of norms for the electronics industry or industries with electronics as a major component and their supply chains to ensure the safety of the work environment, respect for workers, dignity, environmentally friendly business operations, and compliance with ethical standards. The norms covered include:"
+      "title": "RBA",
+      "content": "RESPONSIBLE BUSINESS ALLIANCE CODE OF CONDUCT <br> The Responsible Business Alliance (RBA), formerly the Electronic Industry Citizenship Coalition (EICC), Code of Conduct establishes standards to ensure that working conditions in the electronics industry or industries in which electronics is a key component and its supply chains are safe, that workers are treated with respect and dignity, and that business operations are environmentally responsible and conducted ethically."
     },
     "workerPolicy": {
-      "title": "Worker Policy",
-      "content": "Before joining, Liyun Enterprise conducts 'Employee Advocacy' to clearly demonstrate the protection of employee rights, including basic compliance with legal requirements, freedom of employment, humane treatment, prohibition of discrimination and harassment, and establishes diverse and effective communication mechanisms, sound salary and benefits, provide diverse training and development opportunities, promote freedom of employment, and all work is voluntary. According to the 'Labor Standards Law,' employers shall not employ personnel under the age of 15, strictly prohibit the employment of child labor below the statutory minimum employment age, ensure the physical and mental health and safety of underage workers, and prohibit the arrangement of hazardous or harmful work. Liyun Enterprise's labor policy stipulates the prohibition of child labor, ensures that no child labor below the statutory minimum employment age is employed, and ensures the physical and mental health and safety of underage workers, and prohibits the arrangement of hazardous work. For in-service employees, annual training will be conducted, and advocacy will be conducted through the company's website and internal mailbox to ensure that colleagues can fully understand the content and spirit of RBA policies."
+      "title": "Human rights policy of labors",
+      "content": "<b>Li Yun</b> will notify our employees about their human rights, including the basic laws and regulations. We established effective multi-communication mechanisms, wages, and benefits. We offer multi-training opportunities, eliminate forced labor to promote the freely chosen employment. In accordance with Labor Standards Act, <br>Li Yun</b> has abolished child laborers, supporting the physical and psychological well-being of minor laborers. For our employees, we provide annual training and notify employees of their rights by company website and email, to make sure our employees fully understand the contents and the spirit of the RBA policy."
     },
     "moralPolicy": {
-      "title": "Moral Policy",
-      "content": "Liyun Enterprise prohibits all employees from engaging in any illegal business activities, strictly adheres to the principle of avoiding conflicts of interest, and prohibits the acceptance of all private commissions, kickbacks, or any other obviously disproportionate forms of benefits."
+      "title": "Ethics policy",
+      "content": "<b>Li Yun</b> ’s employees are forbidden to do any illegal business activities and shall avoid conflicts of interests, accept a personal commission, rebate or any benefits inappropriate in any way."
     },
     "enviromentPolicy": {
-      "title": "Environment, Health and Safety Policy",
-      "phase1": "• Utilize materials, conserve energy, reduce waste, and minimize the environmental impact of pollution.",
-      "phase2": "• Respect life, risk control, reduce the impact of hazards on personnel, and continuously improve.",
-      "phase3": "• Comply with regulations and cooperate with the promotion of environment, health and safety policies.",
-      "phase4": "• Strengthen advocacy, prevent pollution, and implement management system execution.",
-      "phase5": "• Implement training, safety inspections, and cultivate a safe and healthy working environment.",
-      "phase6": "• All staff participate, sustainable operation, and achieve the goal of environmental protection, safety, and economic win-win.",
-      "phase7": "Liyun Enterprise continues to make continuous efforts to implement environmental management and create a healthy and comfortable working environment."
+      "title": "Environmental health and safety policy",
+      "phase1": "<b>Li Yun</b> promotes environmental management and is committed to providing a healthy and good working environment for our employees.",
+      "phase2": "",
+      "phase3": "",
+      "phase4": "",
+      "phase5": "",
+      "phase6": "",
+      "phase7": ""
     },
     "moralMineral": {
-      "title": "No Conflict Minerals Policy",
-      "content": "Conflict minerals refer to tin (Sn), tantalum (Ta), tungsten (W), and gold (Au) from conflict areas in the Democratic Republic of the Congo or neighboring countries. As these conflict areas are controlled by non-governmental armed groups, illegal mining is conducted, resulting in human rights violations. Liyun Enterprise pledges that the source of all products does not come from the Congo and its neighboring countries, and any conflict minerals controlled by armed forces in these countries. Suppliers are required to conduct investigations through the 'Conflict Mineral Reporting Template (CMRT),' 'Conflict Metal Source Survey and Declaration of No Use of Conflict Metal,' and 'Supplier Contractor RBA Commitment' to ensure that conflict minerals are not used in raw materials to meet customer and legal requirements."
+      "title": "Sourcing policy for conflict mineral",
+      "content": "We do not use or work with suppliers who source conflict minerals such as, Tin(Sn), tantalum(Ta), tungsten(W), gold(Au) from the Democratic Republic of Congo or any illegal mining activities. We request our suppliers sign the “Conflict Minerals Reporting Template (CMRT)”, ”Declaration of Metal Conflict-Free”, and ”Letter of commitment of supplier for RBA”, making sure our sourcing satisfies the laws and regulations and satisfies our customers request."
     },
     "hsf": {
       "title": "HSF Policy",
-      "content": "Liyun Enterprise promotes green procurement, protects the earth, complies with customer and legal requirements, and continuously improves."
+      "content": "<b>Li Yun</b> acts on the promotion of green purchasing policy, environmental protection, comply with the required of customers and laws and regulations."
     }
   },
   "contact": {

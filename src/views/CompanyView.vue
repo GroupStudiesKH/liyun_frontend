@@ -218,8 +218,7 @@ export default {
               <h3 class="company_heading">{{ $t('company.rba.title') }}</h3>
               <div class="row">
                 <div class="col-12">
-                  <p>
-                    {{ $t('company.rba.content') }}
+                  <p v-html="$t('company.rba.content')">
                   </p>
                 </div>
                 <div class="col-12 text-center">
@@ -256,17 +255,15 @@ export default {
           <div class="row">
             <div class="col-12 company_intro small_padding">
               <h3 class="company_heading">{{ $t('company.workerPolicy.title') }}</h3>
-              <p class="px-3">
-                {{ $t('company.workerPolicy.content') }}
+              <p class="px-3" v-html="$t('company.workerPolicy.content')">
               </p>
 
               <h3 class="company_heading">{{ $t('company.moralPolicy.title') }}</h3>
-              <p class="px-3">
-                {{ $t('company.moralPolicy.content') }}
+              <p class="px-3" v-html="$t('company.moralPolicy.content')">
               </p>
 
               <h3 class="company_heading">{{ $t('company.enviromentPolicy.title') }}</h3>
-              <p class="px-3">
+              <p class="px-3" v-if="locale != 'eng'">
                 {{ $t('company.enviromentPolicy.phase1') }}<br>
                 {{ $t('company.enviromentPolicy.phase2') }}<br>
                 {{ $t('company.enviromentPolicy.phase3') }}<br>
@@ -276,14 +273,15 @@ export default {
                 {{ $t('company.enviromentPolicy.phase7') }}
               </p>
 
+              <p class="px-3" v-html="$t('company.enviromentPolicy.phase1')" v-else></p>
+
               <h3 class="company_heading">{{ $t('company.moralMineral.title') }}</h3>
               <p class="px-3">
                 {{ $t('company.moralMineral.content') }}
               </p>
 
               <h3 class="company_heading">{{ $t('company.hsf.title') }}</h3>
-              <p class="px-3">
-                {{ $t('company.hsf.content') }}
+              <p class="px-3" v-html="$t('company.hsf.content')">
               </p>
             </div>
           </div>
