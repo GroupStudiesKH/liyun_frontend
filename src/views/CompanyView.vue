@@ -128,11 +128,9 @@ export default {
                 </div>
                 <div class="col-md-8 col-12 company_intro">
                   <h3 class="company_heading">{{ $t('company.companyIntro.title') }}</h3>
-                  <p>
-                    {{ $t('company.companyIntro.phase1') }}
+                  <p v-html="$t('company.companyIntro.phase1')">
                   </p>
-                  <p>
-                    {{ $t('company.companyIntro.phase2') }}
+                  <p v-html="$t('company.companyIntro.phase2')">
                   </p>
 
                   <h3 class="company_heading">{{ $t('company.companyPhliosophy.title') }}</h3>
