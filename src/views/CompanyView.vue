@@ -190,6 +190,7 @@ export default {
                     <span class="material-icons"> &#xE038; </span
                     >{{ $t('company.companyProduct.phase6.title') }} 
                   </h3>
+                  <p>{{ $t('company.companyProduct.phase6.content') }} </p>
 
                   <h3 class="company_heading">
                     <span class="material-icons"> &#xE038; </span>
