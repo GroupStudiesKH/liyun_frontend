@@ -107,7 +107,7 @@ export default {
         <div class="col-md-6 col-lg-6 col-12" id="company_intro">
           <h2>LIYUN</h2>
           <p v-html="$t('index.intro')"></p>
-          <a href="#" class="pill_button"> Learn More </a>
+          <router-link :to="{name: 'company'}" class="pill_button"> Learn More </router-link>
         </div>
       </div>
     </div>
